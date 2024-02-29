@@ -7,7 +7,7 @@
 </svelte:head>
 
 <section>
-	<h1>Welcome to Lasikuu</h1>
+	<h1>Welcome to LASIKUU</h1>
 	<h2>ラシクウへようこそ</h2>
 	<p>Freelance Software Development & Consulting</p>
 </section>

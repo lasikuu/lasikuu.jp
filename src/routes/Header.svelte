@@ -5,9 +5,7 @@
 
 <header>
 	<div class="corner">
-		<a href="https://lasikuu.jp">
-			🌙
-		</a>
+		<span>🌙</span>
 	</div>
 
 	<nav>
@@ -45,7 +43,8 @@
 		height: 3em;
 	}
 
-	.corner a {
+	.corner a,
+	.corner span {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -60,10 +59,10 @@
 	}
 
 	nav {
-    display: flex;
-    justify-content: center;
-    --background: rgba(0, 0, 0, 0.3);
-}
+		display: flex;
+		justify-content: center;
+		--background: rgba(0, 0, 0, 0.3);
+	}
 	svg {
 		width: 2em;
 		height: 3em;
