@@ -12,6 +12,7 @@
 
 	<footer>
 		<p>lasikuu.jp</p>
+		<p><a href="/commerce-disclosure">特定商取引法に基づく表記</a></p>
 	</footer>
 </div>
 
