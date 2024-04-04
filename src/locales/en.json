@@ -1,0 +1,86 @@
+{
+	"meta": {
+		"lang": "en",
+		"nav": {
+			"home": "HOME",
+			"about": "ABOUT"
+		},
+		"footer": {
+			"comdisclosure": "Commercial disclosure",
+			"privacy": "Privacy policy",
+			"tos": "Terms of service"
+		}
+	},
+	"home": {
+		"title": "Welcome to LASIKUU",
+		"intro": "Freelance Software Development & Consulting"
+	},
+	"about": {
+		"title": "About LASIKUU",
+		"intro": "Offering freelance software development and consulting services in English, Japanese or Finnish.",
+		"content": "Email contact@lasikuu.jp for quotes and more information."
+	},
+	"comdisclosure": {
+		"title": "Commercial disclosure",
+		"type": {
+			"heading": "Type of business",
+			"content": "Sole Proprietorship"
+		},
+		"legalname": {
+			"heading": "Legal name",
+			"content": "LASIKUU"
+		},
+		"address": {
+			"heading": "Address",
+			"content": "We will disclose without delay if requested."
+		},
+		"tel": {
+			"heading": "Phone number",
+			"content": "We will disclose without delay if requested."
+		},
+		"email": {
+			"heading": "Email address",
+			"content": "contact@lasikuu.jp"
+		},
+		"headofops": {
+			"heading": "Head of Operations",
+			"content": "LEINIKKA MARKO KRISTIAN"
+		},
+		"additionalfees": {
+			"heading": "Additional fees",
+			"content": "Consumption tax (domestic) / credit card and bank transfer fees"
+		},
+		"cancelpolicy": {
+			"heading": "Cancellation (refund policy)",
+			"content": "We do not accept cancellations after the contract. In the unlikely event of a cancellation during production, we will charge a cancellation fee according to the progress of the work. Also, even if no production work has been done, there will be no refund of the deposit after the contract has started."
+		},
+		"returns": {
+			"heading": "Exchanges and returns policy",
+			"content": "Due to the nature of the service of providing data files and consulting, we cannot accept returns or exchanges."
+		},
+		"delivery": {
+			"heading": "Delivery times and methods",
+			"content": "We start planning and development at the time of contract. Delivery is done according to the contract terms."
+		},
+		"payment": {
+			"heading": "Accepted payment methods",
+			"content": "Credit card or domestic/international bank transfer"
+		},
+		"paymentperiod": {
+			"heading": "Payment period",
+			"content": "Credit card payments are processed immediately, but bank transfers need to be made within 3 days of the order."
+		},
+		"pricing": {
+			"heading": "Price",
+			"content": "Varies by service. The price stated in the contract applies."
+		}
+	},
+	"tos": {
+		"title": "Terms of service",
+		"content": " "
+	},
+	"privacy": {
+		"title": "Privacy policy",
+		"content": " "
+	}
+}

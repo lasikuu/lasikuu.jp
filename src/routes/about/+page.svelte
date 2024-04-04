@@ -1,14 +1,16 @@
+<script lang="ts">
+	import { _ } from 'svelte-i18n'
+</script>
+
 <svelte:head>
-	<title>About</title>
+	<title>{$_('about.title')}</title>
 	<meta name="description" content="About this app" />
 </svelte:head>
 
 <div class="text-column">
-	<h1>About us</h1>
+	<h1>{$_('about.title')}</h1>
 
-	<p>Offering freelance software development and consulting services in English, Japanese or Finnish.</p>
+	<p>{$_('about.intro')}</p>
 
-	<p>Email <b>contact@lasikuu.jp</b> for quotes and more information.</p>
-
-	<pre>building...</pre>
+	<p>{$_('about.content')}</p>
 </div>

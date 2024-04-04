@@ -1,4 +1,5 @@
-<script>
+<script lang="ts">
+	import { _ } from 'svelte-i18n'
 </script>
 
 <svelte:head>
@@ -7,9 +8,11 @@
 </svelte:head>
 
 <section>
-	<h1>Welcome to LASIKUU</h1>
-	<h2>ラシクウへようこそ</h2>
-	<p>Freelance Software Development & Consulting</p>
+	<h1>{$_('home.title')}</h1>
+	<p>{$_('home.intro')}</p>
+	<a href="https://github.com/Lasikuu">
+		<img src="/img/github.svg" alt="GitHub" width="48px" />
+	</a>
 </section>
 
 <style>

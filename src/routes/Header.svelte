@@ -1,11 +1,32 @@
-<script>
-	import { page } from '$app/stores';
-	import github from '$lib/images/github.svg';
+<script lang="ts">
+	import { page } from '$app/stores'
+	import { StorageKeys, setValue } from '$lib/localStorage'
+	import { _, locale } from 'svelte-i18n'
+	import { AppLocale, langPreference } from '../lib/i18n'
+
+	function switchLocale(newLocale: AppLocale) {
+		setValue(StorageKeys.LanguagePref, newLocale)
+		langPreference.set(newLocale)
+		locale.set($langPreference)
+	}
 </script>
 
 <header>
-	<div class="corner">
-		<span>🌙</span>
+	<div class="left-corner">
+		<button
+			on:click={() => switchLocale(AppLocale.EN)}
+			disabled={$langPreference === AppLocale.EN}
+			class="locale-switch"
+		>
+			English
+		</button>
+		<button
+			on:click={() => switchLocale(AppLocale.JA)}
+			disabled={$langPreference === AppLocale.JA}
+			class="locale-switch"
+		>
+			Japanese
+		</button>
 	</div>
 
 	<nav>
@@ -14,10 +35,10 @@
 		</svg>
 		<ul>
 			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
-				<a href="/">Home</a>
+				<a href="/">{$_('meta.nav.home')}</a>
 			</li>
 			<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
-				<a href="/about">About</a>
+				<a href="/about">{$_('meta.nav.about')}</a>
 			</li>
 		</ul>
 		<svg viewBox="0 0 2 3" aria-hidden="true">
@@ -25,11 +46,7 @@
 		</svg>
 	</nav>
 
-	<div class="corner">
-		<a href="https://github.com/Lasikuu">
-			<img src={github} alt="GitHub" />
-		</a>
-	</div>
+	<div class="right-corner"></div>
 </header>
 
 <style>
@@ -38,24 +55,45 @@
 		justify-content: space-between;
 	}
 
-	.corner {
-		width: 3em;
-		height: 3em;
+	.left-corner,
+	nav,
+	.right-corner {
+		flex-grow: 1;
+		flex-basis: 0;
 	}
 
-	.corner a,
-	.corner span {
+	.left-corner {
 		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 100%;
-		height: 100%;
+		gap: 10px;
+		margin: 1.5em;
 	}
 
-	.corner img {
-		width: 2em;
-		height: 2em;
-		object-fit: contain;
+	.left-corner {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.locale-switch {
+		background: none;
+		border: none;
+		color: var(--color-text);
+		font-weight: 700;
+		font-size: 0.8rem;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		cursor: pointer;
+		transition: color 0.2s linear;
+		max-width: 100px;
+	}
+
+	.locale-switch:hover {
+		color: var(--color-theme-1);
+	}
+
+	.locale-switch:disabled {
+		color: var(--color-text);
+		opacity: 0.3;
+		cursor: not-allowed;
 	}
 
 	nav {

@@ -1,0 +1,87 @@
+{
+	"meta": {
+		"lang": "ja",
+		"nav": {
+			"home": "HOME",
+			"about": "ABOUT"
+		},
+		"footer": {
+			"comdisclosure": "特定商取引法に基づく表記",
+			"privacy": "プライバシーポリシー",
+			"tos": "利用規約"
+		}
+	},
+	"home": {
+		"welcome": "LASIKUUへようこそ",
+		"intro": "フリーランス ソフトウェア開発 & コンサルティング"
+	},
+	"about": {
+		"title": "About LASIKUU",
+		"intro": "英語、日本語、フィンランド語でのフリーランスのソフトウェア開発とコンサルティングサービスを提供しています。",
+		"content": "見積もりや詳細情報については、contact@lasikuu.jpまでメールでお問い合わせください。"
+	},
+	"comdisclosure": {
+		"title": "特定商取引法に基づく表記",
+		"description": "特定商取引法に基づく表記",
+		"type": {
+			"heading": "事業種類",
+			"content": "個人事業主"
+		},
+		"legalname": {
+			"heading": "販売業社の名称",
+			"content": "LASIKUU"
+		},
+		"address": {
+			"heading": "所在地",
+			"content": "請求があったら遅滞なく開示します"
+		},
+		"email": {
+			"heading": "メールアドレス",
+			"content": "contact@lasikuu.jp"
+		},
+		"tel": {
+			"heading": "電話番号",
+			"content": "請求があったら遅滞なく開示します"
+		},
+		"headofops": {
+			"heading": "運営統括責任者",
+			"content": "LEINIKKA MARKO KRISTIAN"
+		},
+		"additionalfees": {
+			"heading": "追加手数料等の追加料金",
+			"content": "消費税（国内） / クレジットカード、銀行振込の送金手数料"
+		},
+		"cancelpolicy": {
+			"heading": "キャンセル（返金ポリシー）",
+			"content": "契約後のキャンセルはお受けしておりません。 万が一制作中にキャンセルがあった場合、それまでの作業進捗に合わせたキャンセル料を申し受けます。 また、制作作業に至らなかった場合でも、契約が開始された後は、頭金の返金はございません。"
+		},
+		"returns": {
+			"heading": "返品",
+			"content": "データファイル、コンサルティングの提供というサービスの性質上、返品はお受けできません"
+		},
+		"delivery": {
+			"heading": "引渡時期、方法",
+			"content": "契約時に企画、開発を開始します。納品は契約条項により行います。"
+		},
+		"payment": {
+			"heading": "受け付け可能な決済手段",
+			"content": "クレジットカードまたは国内、国際の銀行振込"
+		},
+		"paymentperiod": {
+			"heading": "決済期間",
+			"content": "クレジットカード決済の場合はただちに処理されますが、 銀行振込の場合は注文から3日以内にお振り込みいただく必要があります。"
+		},
+		"pricing": {
+			"heading": "販売価格",
+			"content": "サービスごとに異なります。契約書に記載された価格が適用されます。"
+		}
+	},
+	"tos": {
+		"title": "利用規約",
+		"content": " "
+	},
+	"privacy": {
+		"title": "プライバシーポリシー",
+		"content": " "
+	}
+}

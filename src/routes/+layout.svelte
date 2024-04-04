@@ -1,20 +1,25 @@
-<script>
-	import Header from './Header.svelte';
-	import './styles.css';
+<script lang="ts">
+	import { isLoading } from 'svelte-i18n'
+	import '../lib/i18n.js'
+	import { langPreference } from '../lib/i18n.js'
+	import Footer from './Footer.svelte'
+	import Header from './Header.svelte'
+	import './styles.css'
 </script>
 
-<div class="app">
-	<Header />
+{#if $isLoading || $langPreference === null}
+	<div></div>
+{:else}
+	<div class="app">
+		<Header />
 
-	<main>
-		<slot />
-	</main>
+		<main>
+			<slot />
+		</main>
 
-	<footer>
-		<p>lasikuu.jp</p>
-		<p><a href="/commerce-disclosure">特定商取引法に基づく表記</a></p>
-	</footer>
-</div>
+		<Footer />
+	</div>
+{/if}
 
 <style>
 	.app {
@@ -32,19 +37,5 @@
 		max-width: 64rem;
 		margin: 0 auto;
 		box-sizing: border-box;
-	}
-
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 12px;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 12px 0;
-		}
 	}
 </style>
