@@ -60,7 +60,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: 10px;
-		margin: 1.5em;
+		margin: 1em 0 0 0.5em;
 	}
 
 	.locale-switch {
