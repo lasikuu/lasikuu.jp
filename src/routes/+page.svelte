@@ -10,8 +10,7 @@
 
 <section>
 	<h1>{$_('home.title')}</h1>
-	<p>{$_('home.intro')}</p>
-	<p><Email /></p>
+	<p>{$_('home.intro')} <Email /></p>
 	<br />
 	<img src="/img/logo.svg" alt="Lasikuu logo" width="48px" />
 </section>
