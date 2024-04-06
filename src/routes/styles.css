@@ -4,8 +4,8 @@
 	--font-body: system-ui, sans-serif;
 	--font-mono: monospace;
 	--color-bg-0: rgb(25, 30, 35);
-	--color-bg-1: hsl(209, 36%, 26%);
-	--color-bg-2: hsl(224, 44%, 15%);
+	--color-bg-1: hsl(210, 59%, 23%);
+	--color-bg-2: hsl(224, 65%, 10%);
 	--color-theme-1: #2870f7;
 	--color-theme-2: #4f8fa6;
 	--color-text: rgba(255, 255, 255, 0.95);
@@ -22,7 +22,7 @@ body {
 	background-attachment: fixed;
 	background-color: var(--color-bg-1);
 	background-size: 100vw 100vh;
-	background-image: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%),
+	background-image: radial-gradient(60% 60% at 50% 50%, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%),
 		linear-gradient(180deg, var(--color-bg-0) 0%, var(--color-bg-1) 15%, var(--color-bg-2) 50%);
 }
 
