@@ -41,12 +41,7 @@
 				<a href="/about">{$_('meta.nav.about')}</a>
 			</li>
 		</ul>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
-		</svg>
 	</nav>
-
-	<div class="right-corner"></div>
 </header>
 
 <style>
@@ -56,21 +51,16 @@
 	}
 
 	.left-corner,
-	nav,
-	.right-corner {
+	nav {
 		flex-grow: 1;
 		flex-basis: 0;
 	}
 
 	.left-corner {
 		display: flex;
+		flex-direction: column;
 		gap: 10px;
 		margin: 1.5em;
-	}
-
-	.left-corner {
-		display: flex;
-		flex-direction: column;
 	}
 
 	.locale-switch {
@@ -98,7 +88,7 @@
 
 	nav {
 		display: flex;
-		justify-content: center;
+		justify-content: flex-end;
 		--background: rgba(0, 0, 0, 0.3);
 	}
 	svg {
@@ -113,7 +103,7 @@
 
 	ul {
 		position: relative;
-		padding: 0;
+		padding: 0 15px 0 0;
 		margin: 0;
 		height: 3em;
 		display: flex;

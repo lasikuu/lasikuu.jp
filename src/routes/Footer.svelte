@@ -3,10 +3,16 @@
 </script>
 
 <footer>
-	<p>lasikuu.jp</p>
+	<p>
+		<a href="https://lasikuu.jp">lasikuu.jp</a>
+		・
+		<a href="https://github.com/LASIKUU">github.com/LASIKUU</a>
+	</p>
 	<div class="documents">
-		<a href="/commerce-disclosure">{$_('meta.footer.comdisclosure')}</a>・
-		<a href="/privacy-policy">{$_('meta.footer.privacy')}</a>・
+		<a href="/commerce-disclosure">{$_('meta.footer.comdisclosure')}</a>
+		・
+		<a href="/privacy-policy">{$_('meta.footer.privacy')}</a>
+		・
 		<a href="/terms-of-service">{$_('meta.footer.tos')}</a>
 	</div>
 </footer>

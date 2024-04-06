@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { _ } from 'svelte-i18n'
+	import Email from '../../locales/shared/email.svelte'
 </script>
 
 <svelte:head>
@@ -9,8 +10,8 @@
 
 <div class="text-column">
 	<h1>{$_('about.title')}</h1>
-
-	<p>{$_('about.intro')}</p>
-
 	<p>{$_('about.content')}</p>
+	<p>
+		<Email />
+	</p>
 </div>

@@ -11,14 +11,17 @@
 			"tos": "Terms of service"
 		}
 	},
+	"shared": {
+		"email1": "Email us at",
+		"email2": "for quotes and more information."
+	},
 	"home": {
-		"title": "Welcome to LASIKUU",
-		"intro": "Freelance Software Development & Consulting"
+		"title": "LASIKUU",
+		"intro": "Offering freelance software development and consulting services. Full-stack web development, architechture, APIs, databases, cloud services such as AWS, and more."
 	},
 	"about": {
 		"title": "About LASIKUU",
-		"intro": "Offering freelance software development and consulting services in English, Japanese or Finnish.",
-		"content": "Email contact@lasikuu.jp for quotes and more information."
+		"content": "LASIKUU was founded in March 2024 and is based in Japan. Services are offered in English, Japanese or Finnish. As for the name, LASIKUU is Finnish and has the meaning of Glass Moon."
 	},
 	"comdisclosure": {
 		"title": "Commercial disclosure",

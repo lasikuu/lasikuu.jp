@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { _ } from 'svelte-i18n'
+	import Email from '../locales/shared/email.svelte'
 </script>
 
 <svelte:head>
@@ -10,9 +11,9 @@
 <section>
 	<h1>{$_('home.title')}</h1>
 	<p>{$_('home.intro')}</p>
-	<a href="https://github.com/Lasikuu">
-		<img src="/img/github.svg" alt="GitHub" width="48px" />
-	</a>
+	<p><Email /></p>
+	<br />
+	<img src="/img/logo.svg" alt="Lasikuu logo" width="48px" />
 </section>
 
 <style>
