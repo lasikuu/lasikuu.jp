@@ -13,10 +13,11 @@ register('en', () => import('../locales/en.json'))
 register('ja', () => import('../locales/ja.json'))
 
 let initialLocale = getValue(StorageKeys.LanguagePref)
-console.log('fromLocalStorage', initialLocale)
 if (!initialLocale || !appLocales.includes(initialLocale)) {
 	initialLocale = getLocaleFromNavigator()
-	console.log('fromNavigator', initialLocale)
+	if (!initialLocale || !appLocales.includes(initialLocale)) {
+		initialLocale = AppLocale.EN
+	}
 }
 
 init({
