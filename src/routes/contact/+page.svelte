@@ -16,7 +16,7 @@
 			<p class="py-6">
 				{$_('contact.content')}
 			</p>
-			<div class="grid grid-flow-col justify-center gap-8">
+			<div class="grid gap-8 sm:grid-flow-col sm:justify-center">
 				<Email />
 				<Line />
 			</div>
