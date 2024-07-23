@@ -15,7 +15,7 @@
 </script>
 
 <header>
-	<div class="navbar">
+	<div class="navbar mx-4 lg:mx-2">
 		<div class="navbar-start">
 			<div class="dropdown">
 				<div tabindex="0" role="button" class="btn btn-ghost sm:hidden">
