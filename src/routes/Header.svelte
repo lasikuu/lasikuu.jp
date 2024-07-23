@@ -52,14 +52,14 @@
 				disabled={$langPreference === AppLocale.EN}
 				class="locale-switch"
 			>
-				ENGLISH <GBIcon />
+				ＥＮ <GBIcon />
 			</button>
 			<button
 				on:click={() => switchLocale(AppLocale.JA)}
 				disabled={$langPreference === AppLocale.JA}
 				class="locale-switch"
 			>
-				JAPANESE <JPIcon />
+				ＪＡ <JPIcon />
 			</button>
 		</div>
 	</div>
