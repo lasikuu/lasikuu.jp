@@ -9,9 +9,8 @@ export enum AppLocale {
 
 export const appLocales = Object.values(AppLocale)
 
-const LOCALE_DIR = '../../locales'
-register('en', () => import(`${LOCALE_DIR}/en.json`))
-register('ja', () => import(`${LOCALE_DIR}/ja.json`))
+register('en', () => import('../../locales/en.json'))
+register('ja', () => import('../../locales/ja.json'))
 
 let initialLocale = getValue(StorageKeys.LanguagePref)
 if (!initialLocale || !appLocales.includes(initialLocale)) {
