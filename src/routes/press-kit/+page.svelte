@@ -23,7 +23,9 @@
 
 	<h2 class="mt-16 grid">{$_('presskit.meishi')}</h2>
 
-	<a href="/press-kit/meishi_lasikuu_marko.pdf">{$_('presskit.download')} meishi_lasikuu_marko.pdf</a>
+	<a href="/press-kit/meishi_lasikuu_marko.pdf" target="_blank" rel="noopener noreferrer">
+		{$_('presskit.download')} meishi_lasikuu_marko.pdf
+	</a>
 	<br />
 </div>
 
