@@ -26,7 +26,7 @@
 	button .line-logo {
 		width: 30px;
 		height: 100%;
-		background: url(../img/line_v3@3x.png) 0 center no-repeat;
+		background: url(/img/line_v3@3x.png) 0 center no-repeat;
 		background-size: 30px auto;
 	}
 </style>
