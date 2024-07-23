@@ -5,7 +5,6 @@
 <svelte:head>
 	<title>{$_('privacy.title')}</title>
 	<meta name="description" content={$_('privacy.description')} />
-	<html lang={$_('meta.lang')} />
 </svelte:head>
 
 <div class="text-column">

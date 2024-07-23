@@ -5,7 +5,6 @@
 <svelte:head>
 	<title>{$_('comdisclosure.title')}</title>
 	<meta name="description" content={$_('comdisclosure.description')} />
-	<html lang={$_('meta.lang')} />
 </svelte:head>
 
 <div class="text-column">

@@ -3,7 +3,8 @@
 		"lang": "en",
 		"nav": {
 			"home": "HOME",
-			"about": "ABOUT"
+			"about": "ABOUT",
+			"contact": "CONTACT"
 		},
 		"footer": {
 			"comdisclosure": "Commercial disclosure",
@@ -11,20 +12,49 @@
 			"tos": "Terms of service"
 		}
 	},
-	"shared": {
-		"email1": "Email us at",
-		"email2": "for quotes and more information."
+	"components": {
+		"projectflow": {
+			"steps": {
+				"1": "Contact us",
+				"2": "Estimation and planning",
+				"3": "Design and implementation",
+				"4": "Delivery",
+				"5": "Updates and support after delivery (optional)"
+			}
+		},
+		"line": {
+			"add": "Add friend",
+			"hint": "Add LASIKUU as a friend"
+		},
+		"email": {
+			"hint": "Send email to contact@lasikuu.jp"
+		}
 	},
 	"home": {
 		"title": "LASIKUU",
-		"intro": "Offering freelance software development and consulting services. Full-stack web development, architechture, APIs, databases, cloud services such as AWS, and more."
+		"description": "Freelance software development and consulting",
+		"greeting": "Hello! 🐈‍⬛",
+		"intro": "We provide software solutions, including design and consulting services.",
+		"intro2": "Our offerings cover everything from creating and managing websites to building and maintaining databases and cloud services like AWS. Whether you need a new website, help with your current software, or expert advice, we're here to help.",
+		"contactus": "Contact us",
+		"clients": "Proudly delivered solutions for",
+		"exampleproject": "Typical project flow with us"
 	},
 	"about": {
 		"title": "About LASIKUU",
-		"content": "LASIKUU was founded in March 2024 and is based in Japan. Services are offered in English, Japanese or Finnish. As for the name, LASIKUU is Finnish and has the meaning of Glass Moon."
+		"description": "About LASIKUU",
+		"content": "LASIKUU was founded in March 2024 and is based in Japan. Services are offered in English, Japanese or Finnish. ",
+		"name_explanation": "As for the name, LASIKUU is Finnish and has the meaning of Glass Moon.",
+		"timeline": "Timeline"
+	},
+	"contact": {
+		"title": "Contact",
+		"description": "Contact LASIKUU",
+		"content": "For more information and quotes, email or send us a message on LINE."
 	},
 	"comdisclosure": {
 		"title": "Commercial disclosure",
+		"description": "Commercial disclosure",
 		"type": {
 			"heading": "Type of business",
 			"content": "Sole Proprietorship"
@@ -80,10 +110,34 @@
 	},
 	"tos": {
 		"title": "Terms of service",
+		"description": "Terms of service",
 		"content": " "
 	},
 	"privacy": {
 		"title": "Privacy policy",
+		"description": "Privacy policy",
 		"content": " "
+	},
+	"presskit": {
+		"title": "Press kit",
+		"description": "Press kit for LASIKUU",
+		"about": "Download our logos and business cards here.",
+		"logo": "Logo",
+		"download": "Download",
+		"meishi": "Business card"
+	},
+	"timeline": {
+		"2022": {
+			"title": "Founder moves to Japan",
+			"content": "The founder of LASIKUU moved to Japan in 2022 for studies and to pursue a career in software development."
+		},
+		"2024": {
+			"content": "\t\t\tLASIKUU was founded in March 2024 in Kyoto, Japan as a Sole Proprietorship focused on software development and web \t\t\t\tdesign.",
+			"title": "LASIKUU founded"
+		},
+		"future": {
+			"title": "Future",
+			"content": "What will the future hold? Only time will tell."
+		}
 	}
 }

@@ -1,18 +1,40 @@
 <script lang="ts">
+	import { goto } from '$app/navigation'
+	import Clients from '$lib/components/clients.svelte'
+	import ProjectFlow from '$lib/components/project-flow.svelte'
 	import { _ } from 'svelte-i18n'
-	import Email from '../locales/shared/email.svelte'
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Lasikuu freelance software development and consulting." />
+	<title>LASIKUU</title>
+	<meta name="description" content={$_('home.description')} />
 </svelte:head>
 
 <section>
-	<h1>{$_('home.title')}</h1>
-	<p>{$_('home.intro')} <Email /></p>
+	<div class="block text-center">
+		<div class="max-w-xl">
+			<h1 class="logo">{$_('home.title')}</h1>
+			<p class="pt-6 text-xl">{$_('home.greeting')}</p>
+			<p class="pb-6">
+				{$_('home.intro')}
+				<br />
+				<br />
+				{$_('home.intro2')}
+			</p>
+			<button class="btn btn-primary" on:click={() => goto('/contact')}>{$_('home.contactus')}</button>
+		</div>
+	</div>
+
+	<div class="block">
+		<h5>{$_('home.clients')}</h5>
+		<Clients />
+	</div>
+
+	<div class="block">
+		<h5>{$_('home.exampleproject')}</h5>
+		<ProjectFlow />
+	</div>
 	<br />
-	<img src="/img/logo.svg" alt="Lasikuu logo" width="48px" />
 </section>
 
 <style>
@@ -21,10 +43,6 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		flex: 0.6;
-	}
-
-	h1 {
-		width: 100%;
+		gap: 6rem;
 	}
 </style>

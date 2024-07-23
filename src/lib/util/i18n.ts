@@ -9,8 +9,9 @@ export enum AppLocale {
 
 export const appLocales = Object.values(AppLocale)
 
-register('en', () => import('../locales/en.json'))
-register('ja', () => import('../locales/ja.json'))
+const LOCALE_DIR = '../../locales'
+register('en', () => import(`${LOCALE_DIR}/en.json`))
+register('ja', () => import(`${LOCALE_DIR}/ja.json`))
 
 let initialLocale = getValue(StorageKeys.LanguagePref)
 if (!initialLocale || !appLocales.includes(initialLocale)) {
@@ -22,7 +23,10 @@ if (!initialLocale || !appLocales.includes(initialLocale)) {
 
 init({
 	fallbackLocale: 'en',
-	initialLocale
+	initialLocale,
+	handleMissingMessage: () => {
+		return ''
+	}
 })
 
 export const langPreference = writable<AppLocale>(initialLocale)

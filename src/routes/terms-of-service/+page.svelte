@@ -5,7 +5,6 @@
 <svelte:head>
 	<title>{$_('tos.title')}</title>
 	<meta name="description" content={$_('tos.description')} />
-	<html lang={$_('meta.lang')} />
 </svelte:head>
 
 <div class="text-column">
