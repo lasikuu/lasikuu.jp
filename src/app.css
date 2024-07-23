@@ -17,6 +17,7 @@
 	--color-text-muted: rgba(255, 255, 255, 0.6);
 	--column-width: 42rem;
 	--column-margin-top: 4rem;
+	scrollbar-width: thin;
 	font-family: var(--font-body);
 	color: var(--color-text);
 	font-size: 18px;
