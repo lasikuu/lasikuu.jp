@@ -3,7 +3,7 @@
 </script>
 
 <div class="block text-center">
-	<h3>
+	<h2>
 		{#if $page.status === 404}
 			404 - not found
 		{:else if $page.status === 403}
@@ -11,5 +11,5 @@
 		{:else}
 			500 - server error
 		{/if}
-	</h3>
+	</h2>
 </div>
