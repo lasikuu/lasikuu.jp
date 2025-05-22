@@ -5,7 +5,7 @@
 </script>
 
 <footer>
-	<div class="max-w-screen-md">
+	<div class="max-w-(--breakpoint-md)">
 		<div class="footer gap-12 bg-base-200 p-10 text-base-content">
 			<aside>
 				<img src="/img/logo.svg" width="50" height="50" alt="Lasikuu logo" />

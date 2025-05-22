@@ -21,7 +21,7 @@
 				<div tabindex="0" role="button" class="btn btn-ghost sm:hidden">
 					<MenuIcon />
 				</div>
-				<ul class="menu dropdown-content menu-sm z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow">
+				<ul class="menu dropdown-content menu-sm z-1 mt-3 w-52 rounded-box bg-base-100 p-2 shadow-sm">
 					<li aria-current={page.url.pathname === '/about' ? 'page' : undefined}>
 						<a href="/about">{$_('meta.nav.about')}</a>
 					</li>
