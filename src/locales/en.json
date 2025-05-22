@@ -132,12 +132,16 @@
 			"content": "The founder of LASIKUU moves to Japan in 2022 for studies and to pursue a career in software development."
 		},
 		"2024": {
-			"content": "LASIKUU is founded in March 2024 in Kyoto, Japan as a Sole Proprietorship focusing on software development and web design.",
-			"title": "LASIKUU is founded"
+			"title": "LASIKUU is founded",
+			"content": "LASIKUU is founded in March 2024 in Kyoto, Japan as a Sole Proprietorship focusing on software development and web design."
+		},
+		"2025": {
+			"title": "More projects",
+			"content": "LASIKUU is involved in more projects and expands its services."
 		},
 		"future": {
 			"title": "Future",
-			"content": "What will the future hold? Only time will tell."
+			"content": "LASIKUU aims to grow and expand its services to meet the needs of its clients. We are committed to providing high-quality software solutions and consulting services."
 		}
 	}
 }

@@ -17,6 +17,17 @@
 			<hr />
 		</li>
 		<li>
+			<div class="timeline-middle">
+				<TimelineMiddleIcon />
+			</div>
+			<div class="timeline-start mb-10 md:text-end">
+				<time class="font-mono italic">2025</time>
+				<div class="text-lg font-black">{$_('timeline.2025.title')}</div>
+				{$_('timeline.2025.content')}
+			</div>
+			<hr />
+		</li>
+		<li>
 			<hr />
 			<div class="timeline-middle">
 				<TimelineMiddleIcon />
