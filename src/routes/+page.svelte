@@ -21,7 +21,7 @@
 				<br />
 				{$_('home.intro2')}
 			</p>
-			<button class="btn btn-primary" on:click={() => goto('/contact')}>{$_('home.contactus')}</button>
+			<button class="btn btn-primary" onclick={() => goto('/contact')}>{$_('home.contactus')}</button>
 		</div>
 	</div>
 

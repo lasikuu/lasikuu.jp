@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { page } from '$app/stores'
+	import { page } from '$app/state'
 	import GBIcon from '$lib/icons/gb.svelte'
 	import JPIcon from '$lib/icons/jp.svelte'
 	import MenuIcon from '$lib/icons/menu.svelte'
@@ -22,15 +22,15 @@
 					<MenuIcon />
 				</div>
 				<ul class="menu dropdown-content menu-sm z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow">
-					<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
+					<li aria-current={page.url.pathname === '/about' ? 'page' : undefined}>
 						<a href="/about">{$_('meta.nav.about')}</a>
 					</li>
-					<li aria-current={$page.url.pathname === '/contact' ? 'page' : undefined}>
+					<li aria-current={page.url.pathname === '/contact' ? 'page' : undefined}>
 						<a href="/contact">{$_('meta.nav.contact')}</a>
 					</li>
 				</ul>
 			</div>
-			{#if $page.url.pathname === '/'}
+			{#if page.url.pathname === '/'}
 				<a href="/" aria-current="page" class="text-xl font-bold">{$_('meta.nav.home')}</a>
 			{:else}
 				<a href="/" class="text-xl">{$_('meta.nav.home')}</a>
@@ -38,24 +38,24 @@
 		</div>
 		<div class="navbar-center hidden sm:flex">
 			<ul class="menu menu-horizontal px-1 text-xl">
-				<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
+				<li aria-current={page.url.pathname === '/about' ? 'page' : undefined}>
 					<a href="/about">{$_('meta.nav.about')}</a>
 				</li>
-				<li aria-current={$page.url.pathname === '/contact' ? 'page' : undefined}>
+				<li aria-current={page.url.pathname === '/contact' ? 'page' : undefined}>
 					<a href="/contact">{$_('meta.nav.contact')}</a>
 				</li>
 			</ul>
 		</div>
 		<div class="navbar-end flex flex-col items-end gap-1">
 			<button
-				on:click={() => switchLocale(AppLocale.EN)}
+				onclick={() => switchLocale(AppLocale.EN)}
 				disabled={$langPreference === AppLocale.EN}
 				class="locale-switch"
 			>
 				ＥＮ <GBIcon />
 			</button>
 			<button
-				on:click={() => switchLocale(AppLocale.JA)}
+				onclick={() => switchLocale(AppLocale.JA)}
 				disabled={$langPreference === AppLocale.JA}
 				class="locale-switch"
 			>

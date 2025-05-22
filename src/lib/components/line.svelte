@@ -6,9 +6,9 @@
 	<button
 		class="btn"
 		title={$_('components.line.hint')}
-		on:click={() => window.open(`https://lin.ee/qXW81U0`, '_blank')}
+		onclick={() => window.open(`https://lin.ee/qXW81U0`, '_blank')}
 	>
-		<span class="line-logo" />
+		<span class="line-logo"></span>
 		{$_('components.line.add')}
 	</button>
 </div>

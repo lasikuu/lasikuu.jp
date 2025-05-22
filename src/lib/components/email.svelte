@@ -5,7 +5,7 @@
 </script>
 
 <div>
-	<button class="btn" title={$_('components.email.hint')} on:click={() => window.open(`mailto:${address}`, '_blank')}>
+	<button class="btn" title={$_('components.email.hint')} onclick={() => window.open(`mailto:${address}`, '_blank')}>
 		{address}
 	</button>
 </div>
