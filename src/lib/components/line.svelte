@@ -4,7 +4,7 @@
 
 <div>
 	<button
-		class="btn"
+		class="dui-btn"
 		title={$_('components.line.hint')}
 		onclick={() => window.open(`https://lin.ee/qXW81U0`, '_blank')}
 	>

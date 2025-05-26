@@ -1,8 +1,16 @@
 @import '@fontsource/oxanium' layer(base);
 
 @import 'tailwindcss';
-
-@config '../tailwind.config.ts';
+@plugin "daisyui" {
+	themes:
+		light --default,
+		dark --prefersdark;
+	root: ':root';
+	include:;
+	exclude:;
+	prefix: dui-;
+	logs: true;
+}
 
 /*
   The default border color has changed to `currentcolor` in Tailwind CSS v4,
@@ -13,13 +21,13 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
-  }
+	*,
+	::after,
+	::before,
+	::backdrop,
+	::file-selector-button {
+		border-color: var(--color-gray-200, currentcolor);
+	}
 }
 
 :root {
@@ -47,7 +55,8 @@ body {
 	background-attachment: fixed;
 	background-color: var(--color-bg-1);
 	background-size: 100vw 100vh;
-	background-image: radial-gradient(60% 60% at 50% 50%, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%),
+	background-image:
+		radial-gradient(60% 60% at 50% 50%, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%),
 		linear-gradient(180deg, var(--color-bg-0) 0%, var(--color-bg-1) 15%, var(--color-bg-2) 50%);
 }
 

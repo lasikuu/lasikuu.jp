@@ -15,13 +15,13 @@
 </script>
 
 <header>
-	<div class="navbar mx-4 lg:mx-2">
-		<div class="navbar-start">
-			<div class="dropdown">
-				<div tabindex="0" role="button" class="btn btn-ghost sm:hidden">
+	<div class="dui-navbar mx-4 lg:mx-2">
+		<div class="dui-navbar-start">
+			<div class="dui-dropdown">
+				<div tabindex="0" role="button" class="dui-btn dui-btn-ghost sm:hidden">
 					<MenuIcon />
 				</div>
-				<ul class="menu dropdown-content menu-sm z-1 mt-3 w-52 rounded-box bg-base-100 p-2 shadow-sm">
+				<ul class="dui-menu dui-dropdown-content dui-menu-sm rounded-box bg-base-100 z-1 mt-3 w-52 p-2 shadow-sm">
 					<li aria-current={page.url.pathname === '/about' ? 'page' : undefined}>
 						<a href="/about">{$_('meta.nav.about')}</a>
 					</li>
@@ -36,8 +36,8 @@
 				<a href="/" class="text-xl">{$_('meta.nav.home')}</a>
 			{/if}
 		</div>
-		<div class="navbar-center hidden sm:flex">
-			<ul class="menu menu-horizontal px-1 text-xl">
+		<div class="dui-navbar-center hidden sm:flex">
+			<ul class="dui-menu dui-menu-horizontal px-1 text-xl">
 				<li aria-current={page.url.pathname === '/about' ? 'page' : undefined}>
 					<a href="/about">{$_('meta.nav.about')}</a>
 				</li>
@@ -46,7 +46,7 @@
 				</li>
 			</ul>
 		</div>
-		<div class="navbar-end flex flex-col items-end gap-1">
+		<div class="dui-navbar-end flex flex-col items-end gap-1">
 			<button
 				onclick={() => switchLocale(AppLocale.EN)}
 				disabled={$langPreference === AppLocale.EN}

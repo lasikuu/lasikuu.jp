@@ -4,12 +4,12 @@
 </script>
 
 <div>
-	<ul class="timeline timeline-vertical timeline-snap-icon max-md:timeline-compact">
+	<ul class="dui-timeline dui-timeline-vertical dui-timeline-snap-icon max-md:dui-timeline-compact">
 		<li>
-			<div class="timeline-middle">
+			<div class="dui-timeline-middle">
 				<TimelineMiddleIcon />
 			</div>
-			<div class="timeline-start mb-10 md:text-end">
+			<div class="dui-timeline-start mb-10 md:text-end">
 				<time class="font-mono italic">20〇〇</time>
 				<div class="text-lg font-black">{$_('timeline.future.title')}</div>
 				{$_('timeline.future.content')}
@@ -17,10 +17,10 @@
 			<hr />
 		</li>
 		<li>
-			<div class="timeline-middle">
+			<div class="dui-timeline-middle">
 				<TimelineMiddleIcon />
 			</div>
-			<div class="timeline-start mb-10 md:text-end">
+			<div class="dui-timeline-start mb-10 md:text-end">
 				<time class="font-mono italic">2025</time>
 				<div class="text-lg font-black">{$_('timeline.2025.title')}</div>
 				{$_('timeline.2025.content')}
@@ -29,10 +29,10 @@
 		</li>
 		<li>
 			<hr />
-			<div class="timeline-middle">
+			<div class="dui-timeline-middle">
 				<TimelineMiddleIcon />
 			</div>
-			<div class="timeline-end mb-10">
+			<div class="dui-timeline-end mb-10">
 				<time class="font-mono italic">2024</time>
 				<div class="text-lg font-black">{$_('timeline.2024.title')}</div>
 				{$_('timeline.2024.content')}
@@ -41,10 +41,10 @@
 		</li>
 		<li>
 			<hr />
-			<div class="timeline-middle">
+			<div class="dui-timeline-middle">
 				<TimelineMiddleIcon />
 			</div>
-			<div class="timeline-start mb-10 md:text-end">
+			<div class="dui-timeline-start mb-10 md:text-end">
 				<time class="font-mono italic">2022</time>
 				<div class="text-lg font-black">
 					{$_('timeline.2022.title')}
