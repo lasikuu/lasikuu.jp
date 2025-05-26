@@ -13,9 +13,3 @@
 		{address}
 	</button>
 </div>
-
-<style>
-	.btn {
-		color: #fff;
-	}
-</style>
