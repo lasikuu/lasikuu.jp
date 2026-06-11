@@ -43,18 +43,18 @@
 
 	<h2>5. Intellectual Property, Confidentiality, and Data Protection</h2>
 	<p>
-		<b>Intellectual Property:</b> All intellectual property rights, including but not limited to software code, designs,
-		and content created by LASIKUU during the provision of Services, remain the property of LASIKUU unless otherwise agreed
-		upon in writing.
+		<b>Intellectual Property:</b> All intellectual property rights, including but not limited to software code, designs, and
+		content created by LASIKUU during the provision of Services, remain the property of LASIKUU unless otherwise agreed upon
+		in writing.
 	</p>
 	<p>
-		<b>Confidentiality:</b> LASIKUU agrees to keep all client information confidential and will not disclose it to third
-		parties without the client's express consent, except as required by law.
+		<b>Confidentiality:</b> LASIKUU agrees to keep all client information confidential and will not disclose it to third parties
+		without the client's express consent, except as required by law.
 	</p>
 	<p>
 		<b>Data Protection:</b> LASIKUU implements reasonable measures to protect client data and information provided during
-		the course of our Services. However, LASIKUU is not responsible for the security of information transmitted over the
-		internet or stored electronically.
+		the course of our Services. However, LASIKUU is not responsible for the security of information transmitted over the internet
+		or stored electronically.
 	</p>
 	<p>
 		By engaging our Services, clients agree to abide by these terms regarding intellectual property rights,
