@@ -14,9 +14,9 @@
 
 /* Japanese: Noto Sans JP carries the CJK glyphs Geist lacks, so 。、 and kana
    render with correct full-width metrics (and built-in punctuation spacing). */
-@import '@fontsource/noto-sans-jp/400.css' layer(base);
-@import '@fontsource/noto-sans-jp/500.css' layer(base);
-@import '@fontsource/noto-sans-jp/700.css' layer(base);
+@import '@fontsource/noto-sans-jp/japanese-400.css' layer(base);
+@import '@fontsource/noto-sans-jp/japanese-500.css' layer(base);
+@import '@fontsource/noto-sans-jp/japanese-700.css' layer(base);
 
 /* Alternate type voices, kept for easy swapping (install via fontsource first):
    - Schibsted Grotesk (Nordic newspaper grotesk, warmer headings)

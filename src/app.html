@@ -10,6 +10,17 @@
 		<script>
 			document.documentElement.classList.add('js')
 		</script>
+		<!-- Critical base theme, inlined so the first paint is already the dark
+		     instrument theme. Without this the browser shows a white frame while
+		     the external stylesheet downloads (a flash of unstyled content). The
+		     full app.css overrides these with the gradient + custom properties. -->
+		<style>
+			html {
+				color-scheme: dark;
+				background-color: oklch(0.17 0.018 255);
+				color: oklch(0.95 0.01 250);
+			}
+		</style>
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">
