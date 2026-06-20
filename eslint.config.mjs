@@ -1,5 +1,3 @@
-import { dirname } from 'path'
-import { fileURLToPath } from 'url'
 import js from '@eslint/js'
 import svelte from 'eslint-plugin-svelte'
 import globals from 'globals'
@@ -10,6 +8,9 @@ import svelteConfig from './svelte.config.js'
 // const __dirname = dirname(__filename)
 
 export default ts.config(
+	{
+		ignores: ['build/', '.svelte-kit/', 'dist/', 'node_modules/']
+	},
 	js.configs.recommended,
 	...ts.configs.recommended,
 	...svelte.configs.recommended,
@@ -45,9 +46,11 @@ export default ts.config(
 		}
 	},
 	{
+		// Ambient type files legitimately use triple-slash references to pull in
+		// package-provided global types (e.g. @sveltejs/enhanced-img).
+		files: ['**/*.d.ts'],
 		rules: {
-			// Override or add rule settings here, such as:
-			// 'svelte/rule-name': 'error'
+			'@typescript-eslint/triple-slash-reference': 'off'
 		}
 	}
 )

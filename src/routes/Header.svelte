@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state'
-	import GBIcon from '$lib/icons/gb.svelte'
-	import JPIcon from '$lib/icons/jp.svelte'
+	import { resolve } from '$app/paths'
 	import MenuIcon from '$lib/icons/menu.svelte'
 	import { StorageKeys, setValue } from '$lib/util/localStorage'
 	import { _, locale } from 'svelte-i18n'
@@ -10,112 +9,186 @@
 	function switchLocale(newLocale: AppLocale) {
 		setValue(StorageKeys.LanguagePref, newLocale)
 		langPreference.set(newLocale)
-		locale.set($langPreference)
+		locale.set(newLocale)
 	}
+
+	const nav = [
+		{ href: '/services', key: 'meta.nav.services' },
+		{ href: '/about', key: 'meta.nav.about' },
+		{ href: '/contact', key: 'meta.nav.contact' }
+	] as const
+
+	let open = $state(false)
+	const current = $derived(page.url.pathname)
 </script>
 
 <header>
-	<div class="dui-navbar mx-4 lg:mx-2">
-		<div class="dui-navbar-start">
-			<div class="dui-dropdown">
-				<div tabindex="0" role="button" class="dui-btn dui-btn-ghost sm:hidden">
-					<MenuIcon />
-				</div>
-				<ul class="dui-menu dui-dropdown-content dui-menu-sm rounded-box bg-base-100 z-1 mt-3 w-52 p-2 shadow-sm">
-					<li aria-current={page.url.pathname === '/about' ? 'page' : undefined}>
-						<a href="/about">{$_('meta.nav.about')}</a>
-					</li>
-					<li aria-current={page.url.pathname === '/contact' ? 'page' : undefined}>
-						<a href="/contact">{$_('meta.nav.contact')}</a>
-					</li>
-				</ul>
+	<div class="bar">
+		<a href={resolve('/')} class="wordmark logo" aria-current={current === '/' ? 'page' : undefined}>LASIKUU</a>
+
+		<nav class="links" aria-label="Primary">
+			{#each nav as item (item.href)}
+				<a href={resolve(item.href)} class="link" aria-current={current === item.href ? 'page' : undefined}>
+					{$_(item.key)}
+				</a>
+			{/each}
+		</nav>
+
+		<div class="end">
+			<div class="locale" role="group" aria-label="Language">
+				<button onclick={() => switchLocale(AppLocale.EN)} class:on={$langPreference === AppLocale.EN}>EN</button>
+				<span class="sep">/</span>
+				<button onclick={() => switchLocale(AppLocale.JA)} class:on={$langPreference === AppLocale.JA}>JA</button>
 			</div>
-			{#if page.url.pathname === '/'}
-				<a href="/" aria-current="page" class="text-xl font-bold">{$_('meta.nav.home')}</a>
-			{:else}
-				<a href="/" class="text-xl">{$_('meta.nav.home')}</a>
-			{/if}
-		</div>
-		<div class="dui-navbar-center hidden sm:flex">
-			<ul class="dui-menu dui-menu-horizontal px-1 text-xl">
-				<li aria-current={page.url.pathname === '/about' ? 'page' : undefined}>
-					<a href="/about">{$_('meta.nav.about')}</a>
-				</li>
-				<li aria-current={page.url.pathname === '/contact' ? 'page' : undefined}>
-					<a href="/contact">{$_('meta.nav.contact')}</a>
-				</li>
-			</ul>
-		</div>
-		<div class="dui-navbar-end flex flex-col items-end gap-1">
-			<button
-				onclick={() => switchLocale(AppLocale.EN)}
-				disabled={$langPreference === AppLocale.EN}
-				class="locale-switch"
-			>
-				ＥＮ <GBIcon />
-			</button>
-			<button
-				onclick={() => switchLocale(AppLocale.JA)}
-				disabled={$langPreference === AppLocale.JA}
-				class="locale-switch"
-			>
-				ＪＡ <JPIcon />
+			<button class="menu-btn" aria-label="Menu" aria-expanded={open} onclick={() => (open = !open)}>
+				<MenuIcon />
 			</button>
 		</div>
 	</div>
+
+	{#if open}
+		<nav class="drawer" aria-label="Primary mobile">
+			{#each nav as item (item.href)}
+				<a
+					href={resolve(item.href)}
+					aria-current={current === item.href ? 'page' : undefined}
+					onclick={() => (open = false)}
+				>
+					{$_(item.key)}
+				</a>
+			{/each}
+		</nav>
+	{/if}
 </header>
 
-<style lang="postcss">
+<style>
 	header {
+		position: sticky;
+		top: 0;
+		z-index: 50;
+		background: oklch(0.15 0.016 255 / 0.72);
+		backdrop-filter: blur(10px) saturate(1.1);
+		border-bottom: 1px solid var(--ink-700);
+	}
+	.bar {
+		max-width: 72rem;
+		margin: 0 auto;
+		padding: 0.9rem clamp(1rem, 4vw, 2.5rem);
 		display: flex;
-		justify-content: center;
 		align-items: center;
-		max-width: 48rem;
-		width: 100%;
-		margin: auto;
+		justify-content: space-between;
+		gap: 1.5rem;
 	}
-
-	button {
+	.wordmark {
+		font-size: 1.25rem;
+		font-weight: 600;
+		letter-spacing: 0.06em;
+		color: var(--text);
+		transition: color 0.25s var(--ease-out-quint);
+	}
+	.wordmark:hover {
+		color: var(--moon-bright);
+	}
+	.links {
 		display: flex;
-		gap: 8px;
+		gap: clamp(1rem, 3vw, 2.4rem);
+		margin-left: auto;
+		margin-right: 1.5rem;
 	}
-
-	.locale-switch {
+	.link {
+		position: relative;
+		font-family: var(--font-mono);
+		font-size: 0.78rem;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: var(--text-muted);
+		padding: 0.3rem 0;
+		transition: color 0.25s var(--ease-out-quint);
+	}
+	.link:hover {
+		color: var(--moon-bright);
+	}
+	.link[aria-current='page'] {
+		color: var(--text);
+	}
+	.link[aria-current='page']::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: -2px;
+		width: 100%;
+		height: 1px;
+		background: var(--moon);
+		box-shadow: 0 0 8px var(--moon);
+	}
+	.end {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	}
+	.locale {
+		display: flex;
+		align-items: center;
+		gap: 0.4rem;
+		font-family: var(--font-mono);
+		font-size: 0.78rem;
+		letter-spacing: 0.06em;
+	}
+	.locale button {
 		background: none;
 		border: none;
-		color: var(--color-text);
-		font-weight: 700;
-		font-size: 0.8rem;
-		text-transform: uppercase;
-		letter-spacing: 0.05em;
+		color: var(--text-faint);
 		cursor: pointer;
-		transition: color 0.2s linear;
-		max-width: 100px;
+		padding: 0.2rem 0.1rem;
+		transition: color 0.2s var(--ease-out-quint);
+	}
+	.locale button:hover {
+		color: var(--moon-bright);
+	}
+	.locale button.on {
+		color: var(--moon);
+	}
+	.sep {
+		color: var(--ink-600);
+	}
+	.menu-btn {
+		display: none;
+		background: none;
+		border: none;
+		color: var(--text);
+		cursor: pointer;
+		padding: 0.3rem;
+	}
+	.drawer {
+		display: flex;
+		flex-direction: column;
+		padding: 0.5rem clamp(1rem, 4vw, 2.5rem) 1rem;
+		gap: 0.2rem;
+		border-top: 1px solid var(--ink-700);
+	}
+	.drawer a {
+		font-family: var(--font-mono);
+		font-size: 0.85rem;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: var(--text-muted);
+		padding: 0.7rem 0;
+	}
+	.drawer a[aria-current='page'] {
+		color: var(--moon);
 	}
 
-	.locale-switch:hover {
-		color: var(--color-theme-1);
+	@media (max-width: 680px) {
+		.links {
+			display: none;
+		}
+		.menu-btn {
+			display: inline-flex;
+		}
 	}
-
-	.locale-switch:disabled {
-		color: var(--color-text);
-		opacity: 0.3;
-		cursor: not-allowed;
-	}
-
-	li[aria-current='page']::before {
-		--size: 6px;
-		content: '';
-		width: 0;
-		height: 0;
-		position: absolute;
-		top: 0;
-		left: calc(50% - var(--size));
-		border: var(--size) solid transparent;
-		border-top: var(--size) solid var(--color-theme-1);
-	}
-
-	a:hover {
-		color: var(--color-theme-1);
+	@media (min-width: 681px) {
+		.drawer {
+			display: none;
+		}
 	}
 </style>

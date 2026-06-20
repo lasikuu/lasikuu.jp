@@ -2,6 +2,7 @@
 	import { isLoading } from 'svelte-i18n'
 	import { langPreference } from '../lib/util/i18n'
 	import '../lib/util/i18n.js'
+	import MoonDebug from '$lib/components/moon-debug.svelte'
 	import Footer from './Footer.svelte'
 	import Header from './Header.svelte'
 
@@ -11,6 +12,12 @@
 	}
 
 	let { children }: Props = $props()
+
+	// Keep <html lang> in sync with the active locale so browsers apply the
+	// correct font fallback, line-breaking, and CJK punctuation spacing.
+	$effect(() => {
+		if ($langPreference) document.documentElement.lang = $langPreference
+	})
 </script>
 
 {#if $isLoading || $langPreference === null}
@@ -25,6 +32,8 @@
 
 		<Footer />
 	</div>
+
+	<MoonDebug />
 {/if}
 
 <style>
@@ -35,15 +44,8 @@
 	}
 
 	main {
-		display: flex;
 		flex: 1;
-		flex-direction: column;
-		justify-content: space-between;
-		padding: 1rem;
-		gap: 5rem;
 		width: 100%;
-		max-width: 48rem;
-		margin: 0 auto;
 		box-sizing: border-box;
 	}
 </style>

@@ -1,96 +1,360 @@
-@import '@fontsource/oxanium' layer(base);
+/* ── Type ──────────────────────────────────────────────────────────────
+   Wordmark: Oxanium (existing LASIKUU identity, engraved-bezel feel).
+   Headings + body: Geist Sans (cold, engineered grotesk).
+   Data / labels / coordinates: Geist Mono (almanac readouts). */
+@import '@fontsource/oxanium/400.css' layer(base);
+@import '@fontsource/oxanium/600.css' layer(base);
+@import '@fontsource/geist-sans/300.css' layer(base);
+@import '@fontsource/geist-sans/400.css' layer(base);
+@import '@fontsource/geist-sans/500.css' layer(base);
+@import '@fontsource/geist-sans/600.css' layer(base);
+@import '@fontsource/geist-sans/700.css' layer(base);
+@import '@fontsource/geist-mono/400.css' layer(base);
+@import '@fontsource/geist-mono/500.css' layer(base);
+
+/* Japanese: Noto Sans JP carries the CJK glyphs Geist lacks, so 。、 and kana
+   render with correct full-width metrics (and built-in punctuation spacing). */
+@import '@fontsource/noto-sans-jp/400.css' layer(base);
+@import '@fontsource/noto-sans-jp/500.css' layer(base);
+@import '@fontsource/noto-sans-jp/700.css' layer(base);
+
+/* Alternate type voices, kept for easy swapping (install via fontsource first):
+   - Schibsted Grotesk (Nordic newspaper grotesk, warmer headings)
+   - Hanken Grotesk (humanist, softer)
+   - Outfit / Oxanium-for-headings
+   Swap --font-sans / --font-head below and add the matching @import. */
 
 @import 'tailwindcss';
+
 @plugin 'daisyui' {
-	themes:
-		light --default,
-		dark --prefersdark;
+	themes: lasikuu --default --prefersdark;
 	root: ':root';
 	include:;
 	exclude:;
 	prefix: dui-;
-	logs: true;
+	logs: false;
 }
 
-/*
-  The default border color has changed to `currentcolor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
+/* ── The LASIKUU theme: lunar instrument on deep ink ───────────────────── */
+@plugin 'daisyui/theme' {
+	name: 'lasikuu';
+	default: true;
+	prefersdark: true;
+	color-scheme: dark;
 
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
+	--color-base-100: oklch(0.17 0.018 255);
+	--color-base-200: oklch(0.21 0.02 255);
+	--color-base-300: oklch(0.26 0.02 255);
+	--color-base-content: oklch(0.95 0.01 250);
+
+	--color-primary: oklch(0.86 0.06 245);
+	--color-primary-content: oklch(0.18 0.03 255);
+	--color-secondary: oklch(0.55 0.1 255);
+	--color-secondary-content: oklch(0.95 0.01 250);
+	--color-accent: oklch(0.94 0.04 240);
+	--color-accent-content: oklch(0.18 0.03 255);
+	--color-neutral: oklch(0.26 0.02 255);
+	--color-neutral-content: oklch(0.95 0.01 250);
+
+	--color-info: oklch(0.86 0.06 245);
+	--color-success: oklch(0.78 0.12 165);
+	--color-warning: oklch(0.82 0.12 80);
+	--color-error: oklch(0.68 0.17 25);
+
+	--radius-selector: 0.25rem;
+	--radius-field: 0.25rem;
+	--radius-box: 0.5rem;
+	--size-selector: 0.25rem;
+	--size-field: 0.25rem;
+	--border: 1px;
+	--depth: 0;
+	--noise: 0;
+}
+
 @layer base {
 	*,
 	::after,
 	::before,
 	::backdrop,
 	::file-selector-button {
-		border-color: var(--color-gray-200, currentcolor);
+		border-color: var(--ink-700, currentcolor);
 	}
 }
 
 :root {
-	--font-body: system-ui, sans-serif;
-	--font-mono: monospace;
+	/* font stacks. Geist leads for Latin; Noto Sans JP supplies CJK glyphs.
+	   NOTE: the Geist Sans webfont's @font-face has no unicode-range and the
+	   file *does* include some CJK/full-width punctuation (。「」『』（） …) but
+	   not kana/kanji. Per-glyph fallback would therefore render those marks in
+	   Geist's narrow, proportional form (no full-width spacing) while the
+	   surrounding kana come from Noto — see the :lang(ja) override below.
+	   Geist Mono includes none of that punctuation, so appending Noto there is
+	   safe and keeps Latin labels monospaced. */
+	--font-sans: 'Geist Sans', 'Noto Sans JP', system-ui, sans-serif;
+	--font-head: 'Geist Sans', 'Noto Sans JP', system-ui, sans-serif;
+	--font-mono: 'Geist Mono', 'Noto Sans JP', ui-monospace, monospace;
 	--font-logo: 'Oxanium', system-ui, sans-serif;
-	--color-bg-0: rgb(25, 30, 35);
-	--color-bg-1: hsl(210, 59%, 23%);
-	--color-bg-2: hsl(224, 65%, 10%);
-	--color-theme-1: #2870f7;
-	--color-theme-2: #4f8fa6;
-	--color-text: rgba(255, 255, 255, 0.95);
-	--color-text-muted: rgba(255, 255, 255, 0.6);
-	--column-width: 42rem;
-	--column-margin-top: 4rem;
+
+	/* palette (tinted neutrals toward the moonlight hue) */
+	--ink-900: oklch(0.14 0.016 255);
+	--ink-850: oklch(0.17 0.018 255);
+	--ink-800: oklch(0.21 0.02 255);
+	--ink-700: oklch(0.3 0.02 255);
+	--ink-600: oklch(0.4 0.02 255);
+
+	--moon: oklch(0.86 0.06 245);
+	--moon-bright: oklch(0.94 0.04 240);
+	--moon-dim: oklch(0.55 0.1 255);
+
+	--text: oklch(0.95 0.01 250);
+	--text-muted: oklch(0.72 0.015 250);
+	--text-faint: oklch(0.55 0.015 250);
+
+	/* fluid type scale, ratio >= 1.25 */
+	--step--1: clamp(0.8rem, 0.76rem + 0.18vw, 0.9rem);
+	--step-0: clamp(1rem, 0.95rem + 0.25vw, 1.15rem);
+	--step-1: clamp(1.25rem, 1.16rem + 0.45vw, 1.55rem);
+	--step-2: clamp(1.56rem, 1.4rem + 0.8vw, 2.1rem);
+	--step-3: clamp(1.95rem, 1.7rem + 1.3vw, 2.85rem);
+	--step-4: clamp(2.44rem, 2rem + 2.2vw, 3.85rem);
+	--step-5: clamp(3.05rem, 2.3rem + 3.7vw, 5.6rem);
+
+	/* fluid spacing rhythm */
+	--space-section: clamp(4.5rem, 3rem + 7vw, 9rem);
+	--measure: 68ch;
+
+	/* easing */
+	--ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+	--ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+
+	color-scheme: dark;
 	scrollbar-width: thin;
-	font-family: var(--font-body);
-	color: var(--color-text);
-	font-size: 18px;
+	scrollbar-color: var(--ink-700) transparent;
+	font-family: var(--font-sans);
+	color: var(--text);
+	/* Root size drives the whole rem/clamp-based layout. It scales down on
+	   narrow viewports so the page effectively "zooms out" to fit, down to a
+	   280px minimum. Above ~360px it sits at the full 17px. */
+	font-size: clamp(13.5px, 2.92vw + 5.32px, 17px);
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+/* On Japanese pages, lead with Noto Sans JP so CJK punctuation (。「」『』（） …)
+   renders full-width with its correct built-in spacing instead of Geist's
+   narrow Latin-style glyphs. <html lang> is set to the active locale in
+   +layout.svelte. The English site keeps Geist first. */
+:root:lang(ja) {
+	--font-sans: 'Noto Sans JP', 'Geist Sans', system-ui, sans-serif;
+	--font-head: 'Noto Sans JP', 'Geist Sans', system-ui, sans-serif;
+}
+
+html {
+	scroll-behavior: smooth;
 }
 
 body {
-	min-height: 100vh;
+	min-height: 100dvh;
+	min-width: 280px;
 	margin: 0;
+	/* never allow horizontal scroll from oversized decorative elements */
+	overflow-x: clip;
+	background-color: var(--ink-850);
 	background-attachment: fixed;
-	background-color: var(--color-bg-1);
-	background-size: 100vw 100vh;
+	/* cold moonlight pooling top-center over deep ink, no banding */
 	background-image:
-		radial-gradient(60% 60% at 50% 50%, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%),
-		linear-gradient(180deg, var(--color-bg-0) 0%, var(--color-bg-1) 15%, var(--color-bg-2) 50%);
+		radial-gradient(120% 80% at 50% -10%, oklch(0.3 0.05 250 / 0.55) 0%, transparent 55%),
+		radial-gradient(90% 60% at 80% 110%, oklch(0.22 0.04 270 / 0.5) 0%, transparent 60%),
+		linear-gradient(180deg, var(--ink-900) 0%, var(--ink-850) 40%, var(--ink-900) 100%);
+}
+
+::selection {
+	background: oklch(0.86 0.06 245 / 0.25);
+	color: var(--moon-bright);
 }
 
 .logo {
 	font-family: var(--font-logo);
+	letter-spacing: 0.02em;
+}
+
+.font-mono,
+.mono {
+	font-family: var(--font-mono);
+	font-feature-settings: 'tnum' 1;
 }
 
 a {
-	color: var(--color-theme-1);
+	color: inherit;
 	text-decoration: none;
 }
 
-a:hover {
-	text-decoration: underline;
+/* ── Headings: tight, weighted, fluid ──────────────────────────────────── */
+h1,
+h2,
+h3,
+h4 {
+	font-family: var(--font-head);
+	font-weight: 600;
+	line-height: 1.08;
+	letter-spacing: -0.02em;
+	text-wrap: balance;
+	color: var(--text);
 }
 
-pre {
-	font-size: 16px;
+h1 {
+	font-size: var(--step-4);
+	font-weight: 700;
+	letter-spacing: -0.03em;
+}
+h2 {
+	font-size: var(--step-3);
+}
+h3 {
+	font-size: var(--step-1);
+}
+h4 {
+	font-size: var(--step-0);
+	font-weight: 600;
+}
+
+p {
+	line-height: 1.65;
+	color: var(--text-muted);
+}
+
+/* ── Almanac grammar: section index ticks + hairline rules ─────────────── */
+.tick {
 	font-family: var(--font-mono);
-	background-color: rgba(0, 0, 0, 0.45);
-	border-radius: 3px;
-	box-shadow: 2px 2px 6px rgb(0, 0, 0, 0.25);
-	padding: 0.5em;
-	overflow-x: auto;
-	color: var(--color-text);
+	font-size: var(--step--1);
+	font-weight: 500;
+	letter-spacing: 0.12em;
+	color: var(--moon);
+	font-feature-settings: 'tnum' 1;
 }
 
-.text-column {
-	display: flex;
-	max-width: 48rem;
-	flex: 0.6;
-	flex-direction: column;
-	justify-content: center;
+.eyebrow {
+	font-family: var(--font-mono);
+	font-size: var(--step--1);
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+	color: var(--text-faint);
+}
+
+.rule {
+	border: 0;
+	border-top: 1px solid var(--ink-700);
+}
+
+.measure {
+	max-width: var(--measure);
+}
+
+/* ── Page container + section rhythm (shared across all routes) ─────────── */
+.wrap {
+	max-width: 72rem;
 	margin: 0 auto;
+	padding-inline: clamp(1rem, 4vw, 2.5rem);
+}
+.section {
+	padding-block: var(--space-section);
+	border-top: 1px solid var(--ink-700);
+}
+
+/* ── Long-form / legal page shell ──────────────────────────────────────── */
+.prose-page {
+	max-width: 52rem;
+	margin: 0 auto;
+	padding: clamp(3rem, 7vw, 6rem) clamp(1rem, 4vw, 2.5rem) 2rem;
+}
+.prose-page h1 {
+	font-size: var(--step-3);
+	margin: 0 0 1.5rem;
+}
+.prose-page h2 {
+	font-size: var(--step-1);
+	margin: 2.5rem 0 1rem;
+}
+.prose-page p {
+	max-width: var(--measure);
+}
+.prose-page a:not(.btn-moon):not(.btn-ghost-moon) {
+	color: var(--moon);
+	text-decoration: none;
+	border-bottom: 1px solid var(--moon-dim);
+	transition: color 0.2s var(--ease-out-quint);
+}
+.prose-page a:not(.btn-moon):not(.btn-ghost-moon):hover {
+	color: var(--moon-bright);
+}
+
+/* ── Buttons (instrument controls) ─────────────────────────────────────── */
+.btn-moon {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.6em;
+	padding: 0.7em 1.4em;
+	font-family: var(--font-mono);
+	font-size: var(--step--1);
+	font-weight: 500;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--ink-900);
+	background: var(--moon);
+	border: 1px solid var(--moon);
+	border-radius: 0.3rem;
+	cursor: pointer;
+	transition:
+		background 0.25s var(--ease-out-quint),
+		box-shadow 0.25s var(--ease-out-quint),
+		transform 0.12s var(--ease-out-quint);
+}
+.btn-moon:hover {
+	background: var(--moon-bright);
+	box-shadow:
+		0 0 0 1px var(--moon-bright) inset,
+		0 0 28px -6px oklch(0.86 0.06 245 / 0.7);
+}
+.btn-moon:active {
+	transform: translateY(1px);
+}
+
+.btn-ghost-moon {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.6em;
+	padding: 0.7em 1.4em;
+	font-family: var(--font-mono);
+	font-size: var(--step--1);
+	font-weight: 500;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--text);
+	background: transparent;
+	border: 1px solid var(--ink-700);
+	border-radius: 0.3rem;
+	cursor: pointer;
+	transition:
+		border-color 0.25s var(--ease-out-quint),
+		color 0.25s var(--ease-out-quint),
+		transform 0.12s var(--ease-out-quint);
+}
+.btn-ghost-moon:hover {
+	border-color: var(--moon);
+	color: var(--moon-bright);
+}
+.btn-ghost-moon:active {
+	transform: translateY(1px);
+}
+
+:where(a, button):focus-visible {
+	outline: 2px solid var(--moon);
+	outline-offset: 3px;
+	border-radius: 2px;
+}
+
+button:focus:not(:focus-visible) {
+	outline: none;
 }
 
 input,
@@ -99,46 +363,44 @@ button {
 	font-family: inherit;
 }
 
-button:focus:not(:focus-visible) {
-	outline: none;
+pre {
+	font-size: 0.9rem;
+	font-family: var(--font-mono);
+	background-color: oklch(0.14 0.016 255 / 0.6);
+	border: 1px solid var(--ink-700);
+	border-radius: 0.4rem;
+	padding: 1em;
+	overflow-x: auto;
+	color: var(--text);
 }
 
-h1 {
-	@apply my-12 text-4xl font-bold;
-	@apply text-indigo-400;
+/* ── Scroll-reveal (paired with Section.svelte / IntersectionObserver) ─── */
+.reveal {
+	opacity: 0;
+	transform: translateY(18px);
+	transition:
+		opacity 0.8s var(--ease-out-expo),
+		transform 0.8s var(--ease-out-expo);
+}
+.reveal.in {
+	opacity: 1;
+	transform: none;
 }
 
-h2 {
-	@apply my-8 text-3xl font-bold;
-	@apply text-indigo-300;
-}
-
-h3 {
-	@apply mb-4 text-2xl font-bold;
-	@apply text-indigo-300;
-}
-
-h4 {
-	@apply mb-2 text-xl font-bold;
-	@apply text-indigo-300;
-}
-
-h5 {
-	@apply mb-2 text-base font-bold;
-	@apply text-indigo-300;
-}
-
-p {
-	@apply my-4;
-}
-
-.block {
-	@apply flex flex-col items-center justify-center;
-	flex: 0.4;
-}
-
-@media (min-width: 720px) {
-	h1 {
-		@apply text-5xl;
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+	.reveal {
+		opacity: 1;
+		transform: none;
+		transition: none;
+	}
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.001ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.001ms !important;
 	}
 }

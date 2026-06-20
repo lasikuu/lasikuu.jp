@@ -3,11 +3,11 @@
 </script>
 
 <svelte:head>
-	<title>{$_('comdisclosure.title')}</title>
+	<title>{$_('comdisclosure.title')} — LASIKUU</title>
 	<meta name="description" content={$_('comdisclosure.description')} />
 </svelte:head>
 
-<div class="text-column">
+<div class="prose-page">
 	<h1>{$_('comdisclosure.title')}</h1>
 
 	<table>
@@ -71,24 +71,51 @@
 <style>
 	table {
 		border-collapse: collapse;
-		margin: 1rem 0;
+		margin: 2rem 0;
+		width: 100%;
 	}
 
 	tr {
 		display: flex;
-		align-items: center;
-		border-bottom: 1px solid rgba(255, 255, 255, 0.33);
+		align-items: baseline;
+		border-bottom: 1px solid var(--ink-700);
+	}
+
+	tr:first-child {
+		border-top: 1px solid var(--ink-700);
 	}
 
 	th {
-		width: 33%;
+		width: 34%;
 		text-align: left;
-		padding: 0.5rem;
+		padding: 0.9rem 1rem 0.9rem 0;
+		font-family: var(--font-mono);
+		font-size: 0.78rem;
+		font-weight: 500;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		color: var(--moon);
 	}
 
 	td {
 		width: 66%;
 		text-align: left;
-		padding: 0.5rem;
+		padding: 0.9rem 0;
+		color: var(--text-muted);
+		line-height: 1.6;
+	}
+
+	@media (max-width: 600px) {
+		tr {
+			flex-direction: column;
+		}
+		th,
+		td {
+			width: 100%;
+			padding-bottom: 0.3rem;
+		}
+		td {
+			padding-bottom: 0.9rem;
+		}
 	}
 </style>

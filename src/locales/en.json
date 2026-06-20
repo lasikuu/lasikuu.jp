@@ -3,10 +3,16 @@
 		"lang": "en",
 		"nav": {
 			"home": "HOME",
-			"about": "ABOUT",
-			"contact": "CONTACT"
+			"about": "About",
+			"services": "Services",
+			"contact": "Contact"
 		},
 		"footer": {
+			"tagline": "Glass Moon · software studio",
+			"based": "Independent software studio based in Kyoto, Japan.",
+			"company": "Studio",
+			"legal": "Legal",
+			"elsewhere": "Elsewhere",
 			"comdisclosure": "Commercial disclosure",
 			"privacy": "Privacy policy",
 			"tos": "Terms of service"
@@ -15,15 +21,30 @@
 	"components": {
 		"projectflow": {
 			"steps": {
-				"1": "Contact us",
-				"2": "Estimation and planning",
-				"3": "Design and implementation",
-				"4": "Delivery",
-				"5": "Updates and support after delivery (optional)"
+				"1": {
+					"title": "Reach out",
+					"desc": "Tell us what you are trying to do, what is in your way, and any deadline. A rough note is enough; no particular format needed."
+				},
+				"2": {
+					"title": "Scope",
+					"desc": "A short call to check that your needs and what we can help with line up. If it looks right, we send scope, schedule, and an estimate in writing within a few days."
+				},
+				"3": {
+					"title": "Build",
+					"desc": "We work in short cycles, sharing a preview link and periodic notes so progress never goes dark."
+				},
+				"4": {
+					"title": "Handover and aftercare",
+					"desc": "On completion, take the code, docs, and deployment yourself, or let us keep running it. Support continues for a while after release; the relationship does not end with the invoice."
+				}
 			}
 		},
+		"telegram": {
+			"add": "Message on Telegram",
+			"hint": "Message LASIKUU on Telegram"
+		},
 		"line": {
-			"add": "Add friend",
+			"add": "Add on LINE",
 			"hint": "Add LASIKUU as a friend"
 		},
 		"email": {
@@ -32,53 +53,168 @@
 	},
 	"home": {
 		"title": "LASIKUU",
-		"description": "Freelance software development and consulting",
-		"greeting": "Hello! 🐈‍⬛",
-		"intro": "We provide software solutions, including design and consulting services.",
-		"intro2": "Our offerings cover everything from creating and managing websites to building and maintaining databases and cloud services like AWS. Whether you need a new website, help with your current software, or expert advice, we're here to help.",
-		"contactus": "Contact us",
-		"clients": "Proudly delivered solutions for",
-		"exampleproject": "Typical project flow with us"
+		"description": "Software studio in Kyoto",
+		"metadescription": "LASIKUU is an independent software studio in Kyoto, Japan. Forward-deployed and AI engineering, product building, systems integration, and technical advisory, in English, Japanese, and Finnish.",
+		"eyebrow": "Kyoto · since 2024",
+		"headline": "Software built with the patience of moonlight.",
+		"lede": "LASIKUU is an independent software studio in Kyoto. We embed directly with your team, ship the parts others stall on, and carry products from first design to final release.",
+		"greeting": "lat 35.01 · lon 135.77",
+		"contactus": "Start a conversation",
+		"seeservices": "What we do",
+		"scroll": "Scroll to read the chart",
+		"s_services_idx": "01 — Services",
+		"s_services_title": "What we do",
+		"s_services_lede": "From embedding with your engineers and building with AI, to whole products, the systems that connect them, and the advice before the costly calls.",
+		"s_services_more": "Full service detail",
+		"s_why_idx": "02 — Why LASIKUU",
+		"s_why_title": "How we work",
+		"s_flow_idx": "03 — Process",
+		"s_flow_lede": "A calm, legible path from first message to delivery. No surprises, no theatre.",
+		"clients": "Trusted by",
+		"exampleproject": "How a project runs",
+		"s_faq_idx": "04 — Questions",
+		"s_faq_title": "Questions, answered plainly",
+		"s_faq_more": "More on the services page",
+		"values": {
+			"craft": {
+				"title": "Craft over volume",
+				"body": "We take on a focused set of projects at a time. The work gets the attention it needs, and the details are not an afterthought."
+			},
+			"knowledge": {
+				"title": "Information that outlasts us",
+				"body": "We leave behind more than code: a clear record of what was decided and why. Architecture decision records and readable docs keep the knowledge with you long after the work."
+			},
+			"direct": {
+				"title": "You talk to the builders",
+				"body": "No account managers between you and the people writing the code. Decisions are fast and questions get real answers."
+			},
+			"trilingual": {
+				"title": "Three languages",
+				"body": "We work in English, Japanese, and Finnish, so projects that cross borders do not lose meaning in translation."
+			}
+		},
+		"cta_title": "Have something to build?",
+		"cta_body": "Tell us what you are working on. A short message is enough to start; we will reply with honest next steps."
+	},
+	"services": {
+		"title": "Services",
+		"description": "What LASIKUU does",
+		"metadescription": "Forward-deployed engineering, AI engineering, product building, systems integration, and technical advisory from a Kyoto software studio.",
+		"eyebrow": "Services",
+		"headline": "From engineering embedded in your team to the products and systems behind it.",
+		"lede": "LASIKUU works end to end. Pick one piece or the whole arc, in English, Japanese, or Finnish.",
+		"embedded": {
+			"title": "Forward-deployed engineering",
+			"short": "We embed with your team for a sprint or a season to ship the hard parts together.",
+			"long": "When you need hands inside the team rather than a vendor at arm's length, we embed directly, remote day to day with on-site visits when they matter, for a sprint or a season. We learn your codebase, sit in your standups, and ship the difficult parts alongside your engineers.",
+			"tags": "Sprint to season · Inside your codebase · Standups and reviews · Shipping the hard parts"
+		},
+		"ai": {
+			"title": "AI engineering",
+			"short": "AI built into products that ship, and into how your team works day to day.",
+			"long": "Two sides of the same craft. We build AI into products, language models, retrieval over your own data, assistants, and agent workflows, in the places where they earn their keep, with the plumbing around them done properly: evaluation, guardrails, cost control, and fallbacks. We also help existing teams adopt AI in their own work, introducing coding assistants and AI-assisted workflows for developers, with sensible practices instead of hype. When AI is the wrong tool, we will say so.",
+			"tags": "AI / LLM integration · Retrieval / RAG · Assistants and agents · Evaluation and guardrails · Cost control · AI workflows and best practices for dev teams"
+		},
+		"product": {
+			"title": "Product building",
+			"short": "Products and features taken end to end, from design through release and improvement.",
+			"long": "We take a product or feature from design through implementation, release, and the rounds of improvement after. A good fit for teams building out their engineering org, or at a stage where hiring a tech lead is hard. Web and backend, design and data, handled as one piece of work rather than a stack of separate invoices.",
+			"tags": "API and backend · Database design · Realtime · Data pipelines · Automation scripts · Web apps · Mobile"
+		},
+		"integration": {
+			"title": "Systems integration",
+			"short": "Connecting the systems that should already be talking to each other.",
+			"long": "The work of making separate systems work as one: internal tools, AI workflows, and data flowing where it needs to. It often comes up in the middle of building a product, and it is just as often a job worth doing on its own.",
+			"tags": "Internal tools · AI workflows · Data sync · API integration · Auth and payments · Webhooks · Third-party services · Data migration"
+		},
+		"advisory": {
+			"title": "Technical advisory and consulting",
+			"short": "An ongoing second opinion before the decisions that are expensive to undo.",
+			"long": "A standing technical sounding board: architecture reviews, hiring, and AI strategy, for the moments when you want one more perspective before committing time and budget. We also put decisions on the record, with architecture decision records (ADRs) and clear documentation, so the reasoning behind a choice is still there when it matters. Useful as a one-off second opinion or as a continuing relationship, including steady upkeep once software is live.",
+			"tags": "Architecture review · Decision records (ADR) · Documentation · AI strategy · Tech selection · Second opinions · Ongoing maintenance"
+		},
+		"pricing_idx": "Pricing",
+		"pricing_title": "How pricing works",
+		"pricing_lede": "No hidden rate card games. Here is how an engagement is scoped and billed.",
+		"faq_idx": "FAQ",
+		"faq_title": "Frequently asked"
+	},
+	"pricing": {
+		"scope": {
+			"title": "Scope first",
+			"body": "We start with a short conversation, then a written estimate and plan. You see the shape and the budget before any work begins."
+		},
+		"billing": {
+			"title": "Hourly, against a budget",
+			"body": "Work is billed hourly within an agreed project budget. One-time fixed engagements are possible when the scope is clear."
+		},
+		"payment": {
+			"title": "Simple payment",
+			"body": "Credit card or bank transfer, processed through Wise. Japanese consumption tax applies for domestic transactions. Terms are set out in the contract."
+		}
+	},
+	"faq": {
+		"languages": {
+			"q": "What languages do you work in?",
+			"a": "English, Japanese, and Finnish. Meetings, documents, and code comments can be in whichever fits your team best."
+		},
+		"remote": {
+			"q": "Do you work remotely?",
+			"a": "Yes. Most work is remote, and we can also work on-site within Japan when a project calls for it, including forward-deployed engagements inside your team."
+		},
+		"start": {
+			"q": "How do we get started?",
+			"a": "Send a short message by email, Telegram, or LINE describing what you are working on. We reply with a few questions, then a written estimate and plan."
+		},
+		"ip": {
+			"q": "Who owns the work?",
+			"a": "Unless we agree otherwise in the contract, the intellectual property of delivered work transfers to you. We are happy to put this in writing up front."
+		},
+		"stack": {
+			"q": "What technologies do you use?",
+			"a": "First of all, we adapt to whatever stack you are already on. We would rather fit your codebase than ask you to fit ours.\n\nWhen we get to choose, we reach for TypeScript, Go, Rust, reactive Java, Kotlin, and Dart / Flutter, usually with PostgreSQL for storage. Services talk over REST, or Protocol Buffers and gRPC where it helps. On the front end, Svelte, React, Astro, or Vue. For infrastructure, Terraform and AWS CDK with containers, on bare metal, Hetzner, AWS, Google Cloud, or Cloudflare.\n\nWe keep up with the field and will pick the newest tools when they earn it, but only the stable ones, so you are not left on something that breaks or disappears."
+		},
+		"size": {
+			"q": "Are you a big agency?",
+			"a": "No. LASIKUU is a focused, independent studio. You work directly with the people building your product, and we take on a deliberate number of projects at once so each one gets real attention."
+		}
 	},
 	"about": {
 		"title": "About LASIKUU",
 		"description": "About LASIKUU",
-		"content": "LASIKUU was founded in March 2024 and is based in Japan. Services are offered in English, Japanese or Finnish. ",
-		"name_explanation": "As for the name, LASIKUU is Finnish and has the meaning of Glass Moon.",
-		"timeline": "Timeline"
+		"eyebrow": "About",
+		"headline": "A Kyoto studio named after a Finnish moon.",
+		"content": "LASIKUU is an independent software studio founded in March 2024 and based in Kyoto, Japan. Work is offered in English, Japanese, and Finnish, with the same hands staying on your project from first message to delivery.",
+		"name_explanation": "The name is Finnish. \u201cLasi\u201d is glass and \u201ckuu\u201d is moon: a glass moon. It stands for clarity and care, two things software too often lacks.",
+		"founder_greeting": "Hello",
+		"founder_name": "Marko Leinikka",
+		"founder_role_suffix": " · software consultant",
+		"founder_photo_alt": "Marko Leinikka, founder of LASIKUU",
+		"founder_caption": "Founder · Kyoto",
+		"founder_p1": "I studied computer science at the University of Helsinki and Kyoto University, then spent a few years building software at companies in Finland and Japan. I started LASIKUU to work directly with the people I build for, across the borders and languages my work tends to cross, and with the freedom to build things properly.",
+		"founder_p2": "Today I work with clients internationally, in English, Japanese, and Finnish, designing and building software solutions and helping companies with technical strategy and decisions.",
+		"founder_p3": "These are some of the values I keep close: fundamental system design and its architecture; keeping technical and comprehension debt from piling up; and cutting out the unnecessary to get working results to the customer fast.",
+		"timeline": "The story so far"
 	},
 	"contact": {
 		"title": "Contact",
 		"description": "Contact LASIKUU",
-		"content": "For more information and quotes, email or send us a message on LINE."
+		"eyebrow": "Contact",
+		"headline": "Let's talk about your project.",
+		"content": "Email or send a message on Telegram or LINE with a short note about what you are working on. Quotes and questions both welcome; we reply with honest next steps.",
+		"email_label": "By email",
+		"telegram_label": "On Telegram",
+		"line_label": "On LINE"
 	},
 	"comdisclosure": {
 		"title": "Commercial disclosure",
 		"description": "Commercial disclosure",
-		"type": {
-			"heading": "Type of business",
-			"content": "Sole Proprietorship"
-		},
-		"legalname": {
-			"heading": "Legal name",
-			"content": "LASIKUU"
-		},
-		"address": {
-			"heading": "Address",
-			"content": "We will disclose without delay if requested."
-		},
-		"tel": {
-			"heading": "Phone number",
-			"content": "We will disclose without delay if requested."
-		},
-		"email": {
-			"heading": "Email address",
-			"content": "contact@lasikuu.jp"
-		},
-		"headofops": {
-			"heading": "Head of Operations",
-			"content": "LEINIKKA MARKO KRISTIAN"
-		},
+		"type": { "heading": "Type of business", "content": "Sole Proprietorship" },
+		"legalname": { "heading": "Legal name", "content": "LEINIKKA MARKO KRISTIAN (trading as LASIKUU)" },
+		"address": { "heading": "Address", "content": "We will disclose without delay if requested." },
+		"tel": { "heading": "Phone number", "content": "We will disclose without delay if requested." },
+		"email": { "heading": "Email address", "content": "contact@lasikuu.jp" },
+		"headofops": { "heading": "Head of Operations", "content": "LEINIKKA MARKO KRISTIAN" },
 		"additionalfees": {
 			"heading": "Additional fees",
 			"content": "Consumption tax (domestic) / credit card and bank transfer fees"
@@ -110,13 +246,11 @@
 	},
 	"tos": {
 		"title": "Terms of service",
-		"description": "Terms of service",
-		"content": " "
+		"description": "Terms of service"
 	},
 	"privacy": {
 		"title": "Privacy policy",
-		"description": "Privacy policy",
-		"content": " "
+		"description": "Privacy policy"
 	},
 	"presskit": {
 		"title": "Press kit",
@@ -127,21 +261,37 @@
 		"meishi": "Business card"
 	},
 	"timeline": {
-		"2022": {
-			"title": "Founder moves to Japan",
-			"content": "The founder of LASIKUU moves to Japan in 2022 for studies and to pursue a career in software development."
+		"move": {
+			"title": "Moving to Japan",
+			"content": "Moved to Japan to study and build a career in software."
 		},
-		"2024": {
+		"founded": {
 			"title": "LASIKUU is founded",
-			"content": "LASIKUU is founded in March 2024 in Kyoto, Japan as a Sole Proprietorship focusing on software development and web design."
+			"content": "Founded LASIKUU in Kyoto."
 		},
-		"2025": {
-			"title": "More projects",
-			"content": "LASIKUU is involved in more projects and expands its services."
+		"simucube": {
+			"title": "Simucube, principal engineer and consultant",
+			"content": "Started with Simucube as principal engineer and consultant, across AWS, backend, security, and compliance."
 		},
-		"future": {
-			"title": "Future",
-			"content": "LASIKUU aims to grow and expand its services to meet the needs of its clients. We are committed to providing high-quality software solutions and consulting services."
+		"sugi": {
+			"title": "Sugi Holdings, lead engineer",
+			"content": "Joined Sugi Holdings (スギホールディングス株式会社) as lead engineer on an international team, working full-stack on AWS."
+		},
+		"tuner": {
+			"title": "Simucube Tuner 3.1 released",
+			"content": "Simucube Tuner 3.1 shipped, with my work on the backend and cloud."
+		},
+		"chevon": {
+			"title": "Chevon 5th Anniversary site released",
+			"content": "The Chevon 5th Anniversary website went live, built and hosted by LASIKUU end to end, from the code to the infrastructure it runs on."
 		}
+	},
+	"error": {
+		"eyebrow": "Off the chart",
+		"404": "This page is in shadow. Nothing here, yet.",
+		"403": "This page is not open to you.",
+		"500": "Something broke on our side. Please try again.",
+		"generic": "Something went wrong.",
+		"home": "Back to the surface"
 	}
 }
