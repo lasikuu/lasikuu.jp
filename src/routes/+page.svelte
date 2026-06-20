@@ -3,6 +3,7 @@
 	import { resolve } from '$app/paths'
 	import Clients from '$lib/components/clients.svelte'
 	import Faq from '$lib/components/faq.svelte'
+	import InstrumentPlate from '$lib/components/instrument-plate.svelte'
 	import Moon from '$lib/components/moon.svelte'
 	import ProjectFlow from '$lib/components/project-flow.svelte'
 	import Section from '$lib/components/section.svelte'
@@ -42,7 +43,6 @@
 		</div>
 		<div class="hero-moon">
 			<Moon phase={0.62} size={360} vwCap={0.5} />
-			<span class="coord mono">{$_('home.greeting')}</span>
 		</div>
 	</div>
 	<div class="scroll-hint mono">{$_('home.scroll')}</div>
@@ -50,11 +50,16 @@
 
 <!-- ── Services overview ────────────────────────────────────────────────── -->
 <Section class="wrap section">
-	<header class="head">
-		<span class="tick">{$_('home.s_services_idx')}</span>
-		<h2>{$_('home.s_services_title')}</h2>
-		<p class="measure">{$_('home.s_services_lede')}</p>
-	</header>
+	<div class="services-head">
+		<header class="head">
+			<span class="tick">{$_('home.s_services_idx')}</span>
+			<h2>{$_('home.s_services_title')}</h2>
+			<p class="measure">{$_('home.s_services_lede')}</p>
+		</header>
+		<div class="plate-wrap">
+			<InstrumentPlate size={250} />
+		</div>
+	</div>
 	<div class="services">
 		{#each services as s, i (s.key)}
 			<ServiceItem
@@ -172,14 +177,6 @@
 		align-items: center;
 		animation: fade 1.4s var(--ease-out-expo) 0.1s both;
 	}
-	.coord {
-		position: absolute;
-		bottom: -2.5rem;
-		right: 2%;
-		font-size: 0.78rem;
-		color: var(--text-faint);
-		letter-spacing: 0.1em;
-	}
 	.scroll-hint {
 		position: relative;
 		z-index: 1;
@@ -205,6 +202,24 @@
 	.head p {
 		margin: 0;
 		font-size: var(--step-0);
+	}
+
+	/* Services header: copy on the left, instrument plate on the right.
+	   Mirrors the About page-head text+visual grid for a consistent voice. */
+	.services-head {
+		position: relative;
+		display: grid;
+		grid-template-columns: 1.5fr 0.7fr;
+		align-items: center;
+		gap: clamp(2rem, 5vw, 4.5rem);
+		margin-bottom: clamp(2.5rem, 5vw, 4rem);
+	}
+	.services-head .head {
+		margin-bottom: 0;
+	}
+	.plate-wrap {
+		display: flex;
+		justify-content: center;
 	}
 
 	.services {
@@ -297,6 +312,29 @@
 		.hero-moon {
 			order: -1;
 			margin-bottom: 1rem;
+		}
+		/* keep the hero moon from eating the vertical fold on phones */
+		.hero-moon :global(.moon) {
+			width: clamp(120px, 38vw, 200px);
+		}
+		/* the plate becomes a faint instrument watermark behind the header text,
+		   clipped to the header so it no longer pushes content down on mobile */
+		.services-head {
+			display: block;
+			overflow: hidden;
+		}
+		.services-head .head {
+			position: relative;
+			z-index: 1;
+		}
+		.plate-wrap {
+			position: absolute;
+			inset: 0;
+			align-items: center;
+			justify-content: flex-end;
+			opacity: 0.2;
+			pointer-events: none;
+			z-index: 0;
 		}
 	}
 	@media (prefers-reduced-motion: reduce) {

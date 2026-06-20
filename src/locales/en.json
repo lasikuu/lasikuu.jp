@@ -23,19 +23,19 @@
 			"steps": {
 				"1": {
 					"title": "Reach out",
-					"desc": "Tell us what you are trying to do, what is in your way, and any deadline. A rough note is enough; no particular format needed."
+					"desc": "Tell us what you are trying to do, what is in the way, and any deadline. A rough note is enough."
 				},
 				"2": {
 					"title": "Scope",
-					"desc": "A short call to check that your needs and what we can help with line up. If it looks right, we send scope, schedule, and an estimate in writing within a few days."
+					"desc": "A short call to check the fit. If it looks right, scope, schedule, and an estimate follow in writing within a few days."
 				},
 				"3": {
 					"title": "Build",
-					"desc": "We work in short cycles, sharing a preview link and periodic notes so progress never goes dark."
+					"desc": "Short cycles, with a preview link and regular notes so progress never goes dark."
 				},
 				"4": {
 					"title": "Handover and aftercare",
-					"desc": "On completion, take the code, docs, and deployment yourself, or let us keep running it. Support continues for a while after release; the relationship does not end with the invoice."
+					"desc": "Take the code, docs, and deployment yourself, or let us keep running it. Support continues after release; it does not end with the invoice."
 				}
 			}
 		},
@@ -57,14 +57,13 @@
 		"metadescription": "LASIKUU is an independent software studio in Kyoto, Japan. Forward-deployed and AI engineering, product building, systems integration, and technical advisory, in English, Japanese, and Finnish.",
 		"eyebrow": "Kyoto · since 2024",
 		"headline": "Software built with the patience of moonlight.",
-		"lede": "LASIKUU is an independent software studio in Kyoto. We embed directly with your team, ship the parts others stall on, and carry products from first design to final release.",
-		"greeting": "lat 35.01 · lon 135.77",
+		"lede": "An independent Kyoto software studio. We embed with your team, ship the parts others stall on, and carry products from design to release.",
 		"contactus": "Start a conversation",
 		"seeservices": "What we do",
 		"scroll": "Scroll to read the chart",
 		"s_services_idx": "01 · Services",
 		"s_services_title": "What we do",
-		"s_services_lede": "From embedding with your engineers and building with AI, to whole products, the systems that connect them, and the advice before the costly calls.",
+		"s_services_lede": "Embedded engineering and AI, whole products, the systems that connect them, and the advice before the costly calls.",
 		"s_services_more": "Full service detail",
 		"s_why_idx": "02 · Why LASIKUU",
 		"s_why_title": "How we work",
@@ -78,23 +77,23 @@
 		"values": {
 			"craft": {
 				"title": "Craft over volume",
-				"body": "We take on a focused set of projects at a time. The work gets the attention it needs, and the details are not an afterthought."
+				"body": "A focused set of projects at a time, so the work and its details get the attention they need."
 			},
 			"knowledge": {
 				"title": "Information that outlasts us",
-				"body": "We leave behind more than code: a clear record of what was decided and why. Architecture decision records and readable docs keep the knowledge with you long after the work."
+				"body": "More than code: decision records and readable docs, so what was decided and why stays with you long after the work."
 			},
 			"direct": {
 				"title": "You talk to the builders",
-				"body": "No account managers between you and the people writing the code. Decisions are fast and questions get real answers."
+				"body": "No account managers between you and the people writing the code. Decisions are fast, answers are real."
 			},
 			"trilingual": {
 				"title": "Three languages",
-				"body": "We work in English, Japanese, and Finnish, so projects that cross borders do not lose meaning in translation."
+				"body": "English, Japanese, and Finnish, so work that crosses borders never loses meaning in translation."
 			}
 		},
 		"cta_title": "Have something to build?",
-		"cta_body": "Tell us what you are working on. A short message is enough to start; we will reply with honest next steps."
+		"cta_body": "Tell us what you are working on. A short message is enough; we will reply with honest next steps."
 	},
 	"services": {
 		"title": "Services",
