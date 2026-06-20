@@ -68,6 +68,9 @@
 	.copy {
 		position: relative;
 		z-index: 1;
+		/* flex item: without this it keeps its intrinsic min-width and overflows
+		   the viewport on narrow screens, pushing the channels off to the right */
+		min-width: 0;
 		max-width: 40rem;
 	}
 	.copy .eyebrow {
@@ -91,6 +94,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: 0.5rem;
+		min-width: 0;
 		padding: 1.4rem 1.5rem;
 		border: 1px solid var(--ink-700);
 		border-radius: var(--radius-box);
@@ -115,8 +119,11 @@
 		display: flex;
 		align-items: center;
 		gap: 0.5rem;
+		min-width: 0;
 		font-size: var(--step-0);
 		color: var(--text);
+		/* the email is one unbreakable token; let it break rather than overflow */
+		overflow-wrap: anywhere;
 	}
 	.channel:hover .ch-value {
 		color: var(--moon-bright);

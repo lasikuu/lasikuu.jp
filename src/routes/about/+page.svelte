@@ -1,5 +1,5 @@
 <script lang="ts">
-	import marko from '$lib/assets/marko_in_chiran.jpg?enhanced'
+	import marko from '$lib/assets/marko_in_chiran.jpg?enhanced&imgWidth=880&format=webp;jpg'
 	import Moon from '$lib/components/moon.svelte'
 	import Section from '$lib/components/section.svelte'
 	import Timeline from '$lib/components/timeline.svelte'
@@ -24,7 +24,12 @@
 
 <section class="hero wrap">
 	<figure class="portrait">
-		<enhanced:img src={marko} alt={$_('about.founder_photo_alt')} sizes="(max-width: 760px) 100vw, 440px" />
+		<enhanced:img
+			src={marko}
+			alt={$_('about.founder_photo_alt')}
+			sizes="(max-width: 760px) 22rem, 440px"
+			fetchpriority="high"
+		/>
 		<figcaption class="mono">{$_('about.founder_caption')}</figcaption>
 	</figure>
 	<div class="intro">
@@ -93,9 +98,17 @@
 		height: 100%;
 		object-fit: cover;
 		object-position: center 28%;
-		transform: scale(1.1);
-		transform-origin: center 28%;
 		display: block;
+		/* Broken-image fallback: if the photo fails to load, render its alt text
+		   centred and legible instead of clipped in a corner. These text
+		   properties sit under the bitmap once it loads, so they only show in
+		   the broken state. (The previous `transform: scale()` zoom was dropped
+		   because it also scaled and clipped the alt text.) */
+		text-align: center;
+		align-content: center;
+		color: var(--text-muted);
+		font-size: var(--step--1);
+		line-height: 1.5;
 	}
 	.portrait figcaption {
 		position: absolute;
