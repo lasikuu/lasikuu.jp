@@ -4,6 +4,12 @@
 		<meta charset="utf-8" />
 		<link rel="icon" href="%sveltekit.assets%/favicon.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!-- Mark JS as available before first paint. Scroll-reveal sections start
+		     hidden only when this class is present, so without JS (and for
+		     crawlers) the prerendered content stays fully visible. -->
+		<script>
+			document.documentElement.classList.add('js')
+		</script>
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">

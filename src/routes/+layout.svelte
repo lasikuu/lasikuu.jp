@@ -1,7 +1,5 @@
 <script lang="ts">
-	import { isLoading } from 'svelte-i18n'
 	import { langPreference } from '../lib/util/i18n'
-	import '../lib/util/i18n.js'
 	import MoonDebug from '$lib/components/moon-debug.svelte'
 	import Footer from './Footer.svelte'
 	import Header from './Header.svelte'
@@ -20,21 +18,17 @@
 	})
 </script>
 
-{#if $isLoading || $langPreference === null}
-	<div></div>
-{:else}
-	<div class="app">
-		<Header />
+<div class="app">
+	<Header />
 
-		<main>
-			{@render children?.()}
-		</main>
+	<main>
+		{@render children?.()}
+	</main>
 
-		<Footer />
-	</div>
+	<Footer />
+</div>
 
-	<MoonDebug />
-{/if}
+<MoonDebug />
 
 <style>
 	.app {

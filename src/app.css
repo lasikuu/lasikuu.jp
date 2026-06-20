@@ -386,6 +386,13 @@ pre {
 	opacity: 1;
 	transform: none;
 }
+/* Without JS (no `.js` on <html>), reveals can never be triggered, so show the
+   content as-is. Reveals are an enhancement on top of an already-visible page. */
+html:not(.js) .reveal {
+	opacity: 1;
+	transform: none;
+	transition: none;
+}
 
 @media (prefers-reduced-motion: reduce) {
 	html {

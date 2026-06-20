@@ -17,9 +17,6 @@ importers:
       svelte-i18n:
         specifier: ^4.0.1
         version: 4.0.1(svelte@5.56.3(@typescript-eslint/types@8.61.1))
-      svelte-routing:
-        specifier: ^2.13.0
-        version: 2.13.0
     devDependencies:
       '@eslint/js':
         specifier: ^10.0.1
@@ -33,9 +30,6 @@ importers:
       '@fontsource/oxanium':
         specifier: ^5.2.8
         version: 5.2.8
-      '@neoconfetti/svelte':
-        specifier: ^2.2.2
-        version: 2.2.2(svelte@5.56.3(@typescript-eslint/types@8.61.1))
       '@sveltejs/adapter-auto':
         specifier: ^7.0.1
         version: 7.0.1(@sveltejs/kit@2.66.0(@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.56.3(@typescript-eslint/types@8.61.1))(vite@8.0.16(@types/node@24.13.2)(jiti@2.7.0)))(svelte@5.56.3(@typescript-eslint/types@8.61.1))(typescript@6.0.3)(vite@8.0.16(@types/node@24.13.2)(jiti@2.7.0)))
@@ -524,11 +518,6 @@ packages:
     peerDependencies:
       '@emnapi/core': ^1.7.1
       '@emnapi/runtime': ^1.7.1
-
-  '@neoconfetti/svelte@2.2.2':
-    resolution: {integrity: sha512-E7xCFVEEm5Ctnj2udTJy1b9oaTvjz1zi1mYdEtE8rB5BVwq6kHisosDS+zdWN5PMfEMjtbsOV9Cl6tsNSAD1sA==}
-    peerDependencies:
-      svelte: ^3.0.0 || ^4.0.0 || ^5.0.0
 
   '@oxc-project/types@0.133.0':
     resolution: {integrity: sha512-KzkdCd6Uxqnf6l3HOw1xfatAlUURA0g14cvBYFyJ5SaNOQbOUvBr9PKArcPcrNIeRsBdgcUzOGrhKveVpvOIGA==}
@@ -1540,9 +1529,6 @@ packages:
     peerDependencies:
       svelte: ^3.0.0 || ^4.0.0 || ^5.0.0-next.1
 
-  svelte-routing@2.13.0:
-    resolution: {integrity: sha512-/NTxqTwLc7Dq306hARJrH2HLXOBtKd7hu8nxgoFDlK0AC4SOKnzisiX/9m8Uksei1QAWtlAEdF91YphNM8iDMg==}
-
   svelte@5.56.3:
     resolution: {integrity: sha512-w7JvrM5IFl5cmfbY0TLik9o7mjRUJmRMhOR51tBPu708Gr/MjbGs7VnJnr/B0CaXeI4vtnOh7RKxDr0cwhMdDA==}
     engines: {node: '>=18'}
@@ -1978,10 +1964,6 @@ snapshots:
       '@emnapi/runtime': 1.10.0
       '@tybys/wasm-util': 0.10.2
     optional: true
-
-  '@neoconfetti/svelte@2.2.2(svelte@5.56.3(@typescript-eslint/types@8.61.1))':
-    dependencies:
-      svelte: 5.56.3(@typescript-eslint/types@8.61.1)
 
   '@oxc-project/types@0.133.0': {}
 
@@ -2918,8 +2900,6 @@ snapshots:
   svelte-parse-markup@0.1.5(svelte@5.56.3(@typescript-eslint/types@8.61.1)):
     dependencies:
       svelte: 5.56.3(@typescript-eslint/types@8.61.1)
-
-  svelte-routing@2.13.0: {}
 
   svelte@5.56.3(@typescript-eslint/types@8.61.1):
     dependencies:

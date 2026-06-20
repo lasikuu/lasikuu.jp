@@ -14,7 +14,6 @@ export function getValue(key: StorageKeys) {
 export function setValue(key: StorageKeys, value: unknown) {
 	try {
 		window.localStorage.setItem(key, JSON.stringify(value))
-		console.log('set value', key, value)
 	} catch (e) {
 		console.error(e)
 	}

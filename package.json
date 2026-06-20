@@ -15,7 +15,6 @@
 		"@fontsource/geist-mono": "^5.2.8",
 		"@fontsource/geist-sans": "^5.2.5",
 		"@fontsource/oxanium": "^5.2.8",
-		"@neoconfetti/svelte": "^2.2.2",
 		"@sveltejs/adapter-auto": "^7.0.1",
 		"@sveltejs/adapter-static": "^3.0.10",
 		"@sveltejs/enhanced-img": "^0.10.4",
@@ -46,7 +45,6 @@
 	"dependencies": {
 		"@fontsource/noto-sans-jp": "^5.2.9",
 		"@tailwindcss/vite": "^4.3.1",
-		"svelte-i18n": "^4.0.1",
-		"svelte-routing": "^2.13.0"
+		"svelte-i18n": "^4.0.1"
 	}
 }

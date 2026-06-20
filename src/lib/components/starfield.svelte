@@ -37,7 +37,7 @@
 		<span
 			class="star"
 			class:near={st.near}
-			style="left:{st.x}%; top:{st.y}%; width:{st.s}px; height:{st.s}px; opacity:{st.o}; animation-delay:{st.d}s"
+			style="left:{st.x}%; top:{st.y}%; width:{st.s}px; height:{st.s}px; --o:{st.o}; opacity:{st.o}; animation-delay:{st.d}s"
 		></span>
 	{/each}
 </div>
